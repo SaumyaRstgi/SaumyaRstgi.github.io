@@ -5,48 +5,218 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saumya Rastogi - Profile</title>
     <style>
-        body { font-family: Arial, sans-serif; margin: 0; padding: 0; background: #f7f7f7; color: #222; }
-        .container { max-width: 800px; margin: 40px auto; background: #fff; padding: 32px 40px; border-radius: 12px; box-shadow: 0 2px 16px rgba(0,0,0,0.07); }
-        h1, h2 { color: #2d3a4b; }
-        .intro { margin-bottom: 32px; }
-        .skills, .impact, .initiatives { margin-bottom: 28px; }
-        ul { padding-left: 20px; }
-        .section-title { border-bottom: 2px solid #e0e0e0; padding-bottom: 6px; margin-bottom: 16px; }
+        body {
+            font-family: 'Inter', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e3f0ff 0%, #f9fafb 100%);
+            /* Add subtle gray shading overlay */
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            background: radial-gradient(circle at 60% 20%, rgba(180,190,210,0.13) 0%, rgba(200,210,220,0.09) 60%, transparent 100%);
+            z-index: 0;
+        }
+        .main-nav, .profile-header, main, .section, .footer {
+            position: relative;
+            z-index: 1;
+        }
+        .main-nav {
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.7rem 2rem;
+        }
+        .nav-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #23272f;
+        }
+        .nav-links a {
+            margin-left: 24px;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            background: #fff;
+            padding: 56px 24px 32px 24px;
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0 6px 32px rgba(44,62,80,0.07);
+            max-width: 900px;
+            margin: 32px auto 0 auto;
+        }
+        .profile-img {
+            width: 200px;
+            height: 200px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e5e7eb;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        @media (max-width: 800px) {
+            .profile-img { width: 130px; height: 130px; }
+            .profile-header, main { max-width: 98vw; }
+            .profile-header { flex-direction: column; gap: 18px; padding: 36px 8px 18px 8px; }
+            .profile-info { max-width: 98vw; text-align: center; }
+            .section { margin: 18px 0; padding: 20px 8px 12px 8px; }
+            .nav-container { padding: 0.7rem 0.7rem; }
+        }
+        .profile-info {
+            max-width: 500px;
+        }
+        .profile-info h1 {
+            margin: 0 0 8px 0;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #23272f;
+        }
+        .profile-info h2 {
+            margin: 0 0 16px 0;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #2563eb;
+        }
+        .profile-info p {
+            margin: 0;
+            font-size: 1.1rem;
+            color: #4a4e57;
+        }
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 0 40px 0;
+        }
+        .section {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 16px rgba(44,62,80,0.06);
+            margin: 36px 0;
+            padding: 32px 32px 24px 32px;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 18px;
+            border-left: 4px solid #2563eb;
+            padding-left: 12px;
+            letter-spacing: 0.5px;
+        }
+        ul {
+            padding-left: 22px;
+            margin-top: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+            color: #23272f;
+        }
+        .contact-links a {
+            display: inline-block;
+            margin-right: 22px;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.05rem;
+            transition: color 0.2s;
+        }
+        .contact-links a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+        .footer {
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.98rem;
+            margin: 32px 0 16px 0;
+        }
     </style>
 </head>
 <body>
-    <div class="container">
-        <section class="intro">
-            <img src="profilePic.jpeg" alt="Saumya Rastogi" style="width:120px;height:120px;border-radius:50%;object-fit:cover;box-shadow:0 2px 8px rgba(0,0,0,0.10);margin-bottom:18px;display:block;">
-            <h1>Saumya Rastogi</h1>
-            <p>Hi! I'm Saumya, a passionate data scientist and technology enthusiast. I love solving real-world problems using data, building impactful solutions, and driving innovation through analytics and machine learning.</p>
-        </section>
-        <section class="skills">
-            <h2 class="section-title">Skills</h2>
-            <ul>
-                <li>Programming: Python, R, SQL, JavaScript</li>
-                <li>Data Science: Machine Learning, Deep Learning, NLP, Data Visualization</li>
-                <li>Tools: Pandas, NumPy, scikit-learn, TensorFlow, PyTorch, Tableau</li>
-                <li>Web: HTML, CSS, Flask, Dash</li>
-                <li>Other: Git, Docker, Cloud (AWS/GCP)</li>
-            </ul>
-        </section>
-        <section class="impact">
-            <h2 class="section-title">Impact</h2>
-            <ul>
-                <li>Developed predictive models that improved business decision-making and increased efficiency by 20% at previous roles.</li>
-                <li>Automated data pipelines, reducing manual reporting time by 80%.</li>
-                <li>Mentored junior analysts and led data-driven workshops for cross-functional teams.</li>
-            </ul>
-        </section>
-        <section class="initiatives">
-            <h2 class="section-title">Initiatives</h2>
-            <ul>
-                <li>Founded a campus data science club to foster peer learning and project collaboration.</li>
-                <li>Organized hackathons and tech talks to promote innovation and community engagement.</li>
-                <li>Contributed to open-source projects in the data science ecosystem.</li>
-            </ul>
-        </section>
-    </div>
-</body>
+        <nav class="main-nav">
+            <div class="nav-container">
+                <span class="nav-name">Saumya Rastogi</span>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#impact">Impact</a>
+                    <a href="#initiatives">Initiatives</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </nav>
+        <header class="profile-header" id="about">
+            <img src="profilePic.jpeg" alt="Saumya Rastogi" class="profile-img">
+            <div class="profile-info">
+                <h1>Saumya Rastogi</h1>
+                <h2>Data Scientist | AI & Analytics Enthusiast</h2>
+                <p>Hi! I'm Saumya, a passionate data scientist and technology enthusiast. I love solving real-world problems using data, building impactful solutions, and driving innovation through analytics and machine learning. My work focuses on leveraging AI to create value and drive business transformation.</p>
+            </div>
+        </header>
+        <main>
+            <section class="section" id="skills">
+                <h3 class="section-title">Skills</h3>
+                <ul>
+                    <li>Programming: Python, R, SQL, JavaScript</li>
+                    <li>Data Science: Machine Learning, Deep Learning, NLP, Data Visualization</li>
+                    <li>Tools: Pandas, NumPy, scikit-learn, TensorFlow, PyTorch, Tableau</li>
+                    <li>Web: HTML, CSS, Flask, Dash</li>
+                    <li>Other: Git, Docker, Cloud (AWS/GCP)</li>
+                </ul>
+            </section>
+            <section class="section" id="impact">
+                <h3 class="section-title">Impact</h3>
+                <ul>
+                    <li>Developed predictive models that improved business decision-making and increased efficiency by 20% at previous roles.</li>
+                    <li>Automated data pipelines, reducing manual reporting time by 80%.</li>
+                    <li>Mentored junior analysts and led data-driven workshops for cross-functional teams.</li>
+                </ul>
+            </section>
+            <section class="section" id="initiatives">
+                <h3 class="section-title">Initiatives</h3>
+                <ul>
+                    <li>Founded a campus data science club to foster peer learning and project collaboration.</li>
+                    <li>Organized hackathons and tech talks to promote innovation and community engagement.</li>
+                    <li>Contributed to open-source projects in the data science ecosystem.</li>
+                </ul>
+            </section>
+            <section class="section" id="contact">
+                <h3 class="section-title">Get In Touch</h3>
+                <p>Let's connect! Reach out for collaboration, opportunities, or just to chat about data science and AI.</p>
+                <div class="contact-links">
+                    <a href="mailto:your.email@example.com">Email</a>
+                    <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
+                    <!-- Add more contact links as needed -->
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <span>© 2025 Saumya Rastogi. All rights reserved.</span>
+        </footer>
+    </body>
 </html>
