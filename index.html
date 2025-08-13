@@ -4,9 +4,10 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Saumya Rastogi - Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Inter', Arial, sans-serif;
+            font-family: 'Nunito Sans', 'Inter', Arial, sans-serif;
             margin: 0;
             padding: 0;
             background: linear-gradient(135deg, #e3f0ff 0%, #f9fafb 100%);
@@ -21,9 +22,30 @@
             background: radial-gradient(circle at 60% 20%, rgba(180,190,210,0.13) 0%, rgba(200,210,220,0.09) 60%, transparent 100%);
             z-index: 0;
         }
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            background:
+                url('Softball Pic 1.jpeg') no-repeat left 2vw top 2vw,
+                url('Softball pic 2.jpeg') no-repeat right 2vw bottom 2vw,
+                url('ODSC.jpeg') no-repeat left 2vw bottom 2vw;
+            background-size: 420px, 420px, 320px;
+            background-blend-mode: lighten, lighten, lighten;
+            opacity: 0.32;
+            filter: grayscale(0.1) brightness(1.1) contrast(1.08);
+        }
+        @media (max-width: 900px) {
+            body::after {
+                background-size: 48vw, 48vw, 36vw;
+                background-position: left 2vw top 2vw, right 2vw bottom 2vw, left 2vw bottom 2vw;
+            }
+        }
         .main-nav, .profile-header, main, .section, .footer {
             position: relative;
-            z-index: 1;
+            z-index: 2;
         }
         .main-nav {
             background: #fff;
@@ -71,15 +93,15 @@
             margin: 32px auto 0 auto;
         }
         .profile-img {
-            width: 200px;
-            height: 200px;
+            width: 340px;
+            height: 340px;
             border-radius: 50%;
             object-fit: cover;
             border: 3px solid #e5e7eb;
             box-shadow: 0 2px 12px rgba(0,0,0,0.06);
         }
         @media (max-width: 800px) {
-            .profile-img { width: 130px; height: 130px; }
+            .profile-img { width: 200px; height: 200px; }
             .profile-header, main { max-width: 98vw; }
             .profile-header { flex-direction: column; gap: 18px; padding: 36px 8px 18px 8px; }
             .profile-info { max-width: 98vw; text-align: center; }
@@ -102,7 +124,7 @@
             color: #2563eb;
         }
         .profile-info p {
-            margin: 0;
+            margin: 0 0 18px 0;
             font-size: 1.1rem;
             color: #4a4e57;
         }
@@ -110,6 +132,36 @@
             max-width: 900px;
             margin: 0 auto;
             padding: 0 0 40px 0;
+        }
+        .tiles-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 36px auto 0 auto;
+        }
+        .tiles-two-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 36px auto 0 auto;
+        }
+        @media (max-width: 900px) {
+            .tiles-grid { grid-template-columns: 1fr; grid-template-rows: none; gap: 18px; }
+            .tile-section { min-height: unset; padding: 20px 8px 12px 8px; }
+            .tiles-two-cols { grid-template-columns: 1fr; gap: 18px; }
+        }
+        .tile-section {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 16px rgba(44,62,80,0.06);
+            padding: 32px 32px 24px 32px;
+            min-height: 260px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
         }
         .section {
             background: #fff;
@@ -155,6 +207,12 @@
             font-size: 0.98rem;
             margin: 32px 0 16px 0;
         }
+        .tile-section#skills {
+            margin-top: 36px;
+        }
+        @media (max-width: 900px) {
+            .tile-section#skills { margin-top: 18px; }
+        }
     </style>
 </head>
 <body>
@@ -174,36 +232,45 @@
             <img src="profilePic.jpeg" alt="Saumya Rastogi" class="profile-img">
             <div class="profile-info">
                 <h1>Saumya Rastogi</h1>
-                <h2>Data Scientist | AI & Analytics Enthusiast</h2>
-                <p>Hi! I'm Saumya, a passionate data scientist and technology enthusiast. I love solving real-world problems using data, building impactful solutions, and driving innovation through analytics and machine learning. My work focuses on leveraging AI to create value and drive business transformation.</p>
-            </div>
+                <h2>Data Scientist | AI & Analytics Professional</h2>
+                <p>Hi there!!.. I am Saumya Rastogi, Data Scientist with over 9 years of experience in financial services industry. I am passionate about leveraging AI, machine learning, and Generative AI to deliver impactful, data-driven solutions. My expertise lies in owning the end-to-end technical delivery of projects, ensuring they are scalable and aligned with organizational objectives.</p>
+                <p>I have a proven track record of leading cross-functional analytics teams to optimize key areas such as product pricing, claims management, and demand modeling, driving significant business value. I thrive on coaching and mentoring junior talent, fostering a culture of growth and innovation within my teams. With a Master's degree in Economics specializing in advanced econometrics, I bring a strong quantitative foundation to all my work, enabling me to develop robust hypotheses and deliver solutions that are both technically sound and strategically valuable.</p>
+              </div>
         </header>
         <main>
-            <section class="section" id="skills">
-                <h3 class="section-title">Skills</h3>
+            <section class="tile-section" id="skills">
+                <h3 class="section-title">Skills & Expertise</h3>
                 <ul>
-                    <li>Programming: Python, R, SQL, JavaScript</li>
-                    <li>Data Science: Machine Learning, Deep Learning, NLP, Data Visualization</li>
-                    <li>Tools: Pandas, NumPy, scikit-learn, TensorFlow, PyTorch, Tableau</li>
-                    <li>Web: HTML, CSS, Flask, Dash</li>
-                    <li>Other: Git, Docker, Cloud (AWS/GCP)</li>
+                    <li>Programming: Python, R, SQL, SAS,</li>
+                    <li>Platforms: AWS, Azure, Databricks, Snowflake, MongoDB, Posit</li>
+                    <li>Data Science: Machine Learning, Neural Nets, Generative AI</li>
+                    <li>Statistical Modeling, Inferential Statistics & Predictive Analytics</li>
+                    <li>Data Engineering & Visualization</li>
+                    <li>Mentoring & Team Leadership</li>
+                    <li>Cloud & Scalable Solutions</li>
                 </ul>
             </section>
-            <section class="section" id="impact">
-                <h3 class="section-title">Impact</h3>
-                <ul>
-                    <li>Developed predictive models that improved business decision-making and increased efficiency by 20% at previous roles.</li>
-                    <li>Automated data pipelines, reducing manual reporting time by 80%.</li>
-                    <li>Mentored junior analysts and led data-driven workshops for cross-functional teams.</li>
-                </ul>
-            </section>
-            <section class="section" id="initiatives">
-                <h3 class="section-title">Initiatives</h3>
-                <ul>
-                    <li>Founded a campus data science club to foster peer learning and project collaboration.</li>
-                    <li>Organized hackathons and tech talks to promote innovation and community engagement.</li>
-                    <li>Contributed to open-source projects in the data science ecosystem.</li>
-                </ul>
+            <div class="tiles-two-cols">
+                <section class="tile-section" id="impact">
+                    <h3 class="section-title">Impact</h3>
+                    <ul>
+                        <li>Developed predictive models that improved business decision-making and increased efficiency by 20% at previous roles.</li>
+                        <li>Automated data pipelines, reducing manual reporting time by 80%.</li>
+                        <li>Mentored junior analysts and led data-driven workshops for cross-functional teams.</li>
+                    </ul>
+                </section>
+                <section class="tile-section" id="initiatives">
+                    <h3 class="section-title">Initiatives</h3>
+                    <ul>
+                        <li>Founded a campus data science club to foster peer learning and project collaboration.</li>
+                        <li>Organized hackathons and tech talks to promote innovation and community engagement.</li>
+                        <li>Contributed to open-source projects in the data science ecosystem.</li>
+                    </ul>
+                </section>
+            </div>
+            <section class="section" id="outside-work">
+                <h3 class="section-title">Outside of Work</h3>
+                <p>Beyond data science, I am passionate about sports and actively participate in local softball and wallyball leagues. I also love gardening and enjoy studying horticulture, finding joy in nurturing plants and learning about the science behind their growth.</p>
             </section>
             <section class="section" id="contact">
                 <h3 class="section-title">Get In Touch</h3>
