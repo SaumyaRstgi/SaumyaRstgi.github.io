@@ -162,6 +162,13 @@
             display: flex;
             flex-direction: column;
             justify-content: flex-start;
+            margin-bottom: 36px;
+            border: 1.5px solid #e5e7eb;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .tile-section:hover, .section:hover {
+            box-shadow: 0 6px 32px rgba(44,62,80,0.13);
+            transform: translateY(-2px) scale(1.01);
         }
         .section {
             background: #fff;
@@ -169,6 +176,8 @@
             box-shadow: 0 2px 16px rgba(44,62,80,0.06);
             margin: 36px 0;
             padding: 32px 32px 24px 32px;
+            border: 1.5px solid #e5e7eb;
+            transition: box-shadow 0.2s, transform 0.2s;
         }
         .section-title {
             font-size: 1.3rem;
@@ -178,6 +187,10 @@
             border-left: 4px solid #2563eb;
             padding-left: 12px;
             letter-spacing: 0.5px;
+            background: linear-gradient(90deg, #eaf3ff 0%, #f7faff 100%);
+            border-radius: 6px;
+            padding-top: 6px;
+            padding-bottom: 6px;
         }
         ul {
             padding-left: 22px;
@@ -191,27 +204,97 @@
         .contact-links a {
             display: inline-block;
             margin-right: 22px;
-            color: #2563eb;
+            color: #fff;
+            background: #2563eb;
+            border-radius: 6px;
+            padding: 8px 18px;
             text-decoration: none;
-            font-weight: 500;
+            font-weight: 600;
             font-size: 1.05rem;
-            transition: color 0.2s;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.07);
         }
         .contact-links a:hover {
-            color: #1d4ed8;
-            text-decoration: underline;
+            background: #1d4ed8;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(44,62,80,0.13);
         }
         .footer {
             text-align: center;
             color: #6b7280;
             font-size: 0.98rem;
             margin: 32px 0 16px 0;
+            border-top: 1.5px solid #e5e7eb;
+            padding-top: 18px;
+            background: linear-gradient(90deg, #f7faff 0%, #eaf3ff 100%);
         }
         .tile-section#skills {
             margin-top: 36px;
         }
         @media (max-width: 900px) {
             .tile-section#skills { margin-top: 18px; }
+        }
+        .impact-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 900px) {
+            .impact-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        .impact-card {
+            background: linear-gradient(135deg, #eaf3ff 0%, #f7faff 100%);
+            border-radius: 14px;
+            box-shadow: 0 2px 16px rgba(44,62,80,0.08);
+            padding: 24px;
+            border: 1.5px solid #dbeafe;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .impact-card:hover {
+            box-shadow: 0 6px 32px rgba(44,62,80,0.13);
+            transform: translateY(-2px) scale(1.015);
+        }
+        .impact-card-title {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #dbeafe;
+            padding-bottom: 6px;
+            background: linear-gradient(90deg, #eaf3ff 0%, #f7faff 100%);
+            border-radius: 6px;
+        }
+        .tile-section:not(:last-child), .section:not(:last-child) {
+            box-shadow: 0 2px 16px rgba(44,62,80,0.06), 0 1px 0 #e5e7eb;
+        }
+        .section-title::before {
+            content: '\1F4C8'; /* chart increasing icon */
+            margin-right: 10px;
+            font-size: 1.1em;
+            vertical-align: middle;
+            color: #2563eb;
+        }
+        #skills .section-title::before { content: '\1F4BB'; } /* laptop */
+        #initiatives .section-title::before { content: '\1F680'; } /* rocket */
+        #outside-work .section-title::before { content: '\1F3C0'; } /* basketball */
+        #contact .section-title::before { content: '\2709'; } /* envelope */
+        @media (max-width: 800px) {
+            .tile-section, .section {
+                padding: 20px 8px 12px 8px;
+            }
+            .section-title {
+                font-size: 1.1rem;
+                padding-top: 4px;
+                padding-bottom: 4px;
+            }
+            .impact-card-title {
+                font-size: 1.1rem;
+            }
         }
     </style>
 </head>
@@ -250,24 +333,55 @@
                     <li>Cloud & Scalable Solutions</li>
                 </ul>
             </section>
-            <div class="tiles-two-cols">
-                <section class="tile-section" id="impact">
-                    <h3 class="section-title">Impact</h3>
-                    <ul>
-                        <li>Developed predictive models that improved business decision-making and increased efficiency by 20% at previous roles.</li>
-                        <li>Automated data pipelines, reducing manual reporting time by 80%.</li>
-                        <li>Mentored junior analysts and led data-driven workshops for cross-functional teams.</li>
-                    </ul>
-                </section>
-                <section class="tile-section" id="initiatives">
-                    <h3 class="section-title">Initiatives</h3>
-                    <ul>
-                        <li>Founded a campus data science club to foster peer learning and project collaboration.</li>
-                        <li>Organized hackathons and tech talks to promote innovation and community engagement.</li>
-                        <li>Contributed to open-source projects in the data science ecosystem.</li>
-                    </ul>
-                </section>
-            </div>
+            <section class="tile-section" id="impact">
+                <h3 class="section-title">Impact</h3>
+                <div class="impact-cards">
+                    <div class="impact-card">
+                        <div class="impact-card-title">Product Strategy and Risk Analytics</div>
+                        <strong>Optimized Product Pricing</strong><br> 
+                        I led an 8-member team to design and implement a cutting-edge pricing algorithm for a $2B disability product. By leveraging predictive models (XGBoost & GLMs) and competitor data, we improved risk rating and selection, which reduced underwriting cycles and enhanced market competitiveness, ultimately leading to wider and easier product adoption.<br><br>
+                        <strong>Reduced Future Liabilities</strong><br>
+                        I led a team of three data scientists in developing data-driven risk models (Poisson GLM). These models, which predict claim occurrence and termination, enabled us to estimate a reduction of approximately $600 million in future liabilities for a sensitive portfolio valued at over $15 billion. My work included identifying emerging risk patterns through SHAP analysis.
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-card-title">Operational Analytics</div>
+                        <strong>Boosted Quote Efficiency</strong><br>
+                        I developed a data-driven risk-rating model (GBM, GLM) that boosted quote efficiency by 300% for long-term disability insurance. This solution was scaled across four additional product lines, demonstrating a significant improvement in operational efficiency.<br><br>
+                        <strong>Streamlined Claims Processing</strong><br>
+                        I developed a survival model to predict claim duration, which enabled the strategic prioritization of open claims for handling and approval. This solution significantly reduced manual effort and streamlined the claims examination process.<br><br>
+                        <strong>Fraud Detection</strong><br>
+                        I engineered an anomaly detection framework (using isolation forest, CADE) to identify fraudulent financial transactions, enabling more efficient compliance communication.
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-card-title">Agentic AI</div>
+                        <strong>RAG Application</strong><br>
+                        I pioneered the development of two innovative Gen AI applications to improve business efficiency. I built a RAG-powered internal wiki for legal documents (using FAISS & Chroma DB), which streamlined the querying and summarization process.<br><br>
+                        <strong>Real-time Business Insights</strong><br>
+                        I created an Agentic AI-powered financial analyst using a multi-agent framework to deliver real-time business insights.
+                    </div>
+                </div>
+            </section>
+            <section class="tile-section" id="initiatives">
+                <h3 class="section-title">Leadership and Team Enablement Initiatives</h3>
+                <div class="impact-cards">
+                    <div class="impact-card">
+                        <div class="impact-card-title">Driving Platform Adoption and Excellence</div>
+                        I lead key initiatives focused on team enablement and technical excellence. This includes spearheading the onboarding, training, and troubleshooting for new platforms, as well as running a community of practice to ensure uniform tool adoption and adherence to best practices. This ensures a high level of operational efficiency and consistency across the team.
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-card-title">Coaching and Development</div>
+                        I actively mentor and coach junior team members to foster their growth and effectiveness. This involves helping them break down complex problem statements, structure project plans, and providing them with opportunities to showcase their work, which has been instrumental in building team capability and morale.
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-card-title">Research & Development (R&D) Initiatives</div>
+                        These are forward-looking projects focused on exploring new technologies, methodologies, or data sources. An R&D initiative might involve prototyping a new predictive modeling technique, evaluating the business potential of a new external dataset, or exploring pain points which need to be modernized.
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-card-title">Data Governance & Quality Initiatives</div>
+                        This would focus on ensuring the integrity, reliability, and security of data used for modeling and analysis. Examples could include creating a data catalog, establishing data lineage, or implementing automated data quality checks.
+                    </div>
+                </div>
+            </section>
             <section class="section" id="outside-work">
                 <h3 class="section-title">Outside of Work</h3>
                 <p>Beyond data science, I am passionate about sports and actively participate in local softball and wallyball leagues. I also love gardening and enjoy studying horticulture, finding joy in nurturing plants and learning about the science behind their growth.</p>
