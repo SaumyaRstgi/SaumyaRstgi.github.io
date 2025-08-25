@@ -1,0 +1,403 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saumya Rastogi - Profile</title>
+    <link href="https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Nunito Sans', 'Inter', Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background: linear-gradient(135deg, #e3f0ff 0%, #f9fafb 100%);
+            /* Add subtle gray shading overlay */
+            position: relative;
+        }
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0; left: 0; right: 0; bottom: 0;
+            pointer-events: none;
+            background: radial-gradient(circle at 60% 20%, rgba(180,190,210,0.13) 0%, rgba(200,210,220,0.09) 60%, transparent 100%);
+            z-index: 0;
+        }
+        body::after {
+            content: '';
+            position: fixed;
+            inset: 0;
+            pointer-events: none;
+            z-index: 1;
+            background:
+                url('Softball Pic 1.jpeg') no-repeat left 2vw top 2vw,
+                url('Softball pic 2.jpeg') no-repeat right 2vw bottom 2vw,
+                url('ODSC.jpeg') no-repeat left 2vw bottom 2vw;
+            background-size: 420px, 420px, 320px;
+            background-blend-mode: lighten, lighten, lighten;
+            opacity: 0.32;
+            filter: grayscale(0.1) brightness(1.1) contrast(1.08);
+        }
+        @media (max-width: 900px) {
+            body::after {
+                background-size: 48vw, 48vw, 36vw;
+                background-position: left 2vw top 2vw, right 2vw bottom 2vw, left 2vw bottom 2vw;
+            }
+        }
+        .main-nav, .profile-header, main, .section, .footer {
+            position: relative;
+            z-index: 2;
+        }
+        .main-nav {
+            background: #fff;
+            border-bottom: 1px solid #e5e7eb;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.03);
+            position: sticky;
+            top: 0;
+            z-index: 10;
+        }
+        .nav-container {
+            max-width: 900px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            padding: 0.7rem 2rem;
+        }
+        .nav-name {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #23272f;
+        }
+        .nav-links a {
+            margin-left: 24px;
+            color: #2563eb;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1rem;
+            transition: color 0.2s;
+        }
+        .nav-links a:hover {
+            color: #1d4ed8;
+            text-decoration: underline;
+        }
+        .profile-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 40px;
+            background: #fff;
+            padding: 56px 24px 32px 24px;
+            border-radius: 0 0 18px 18px;
+            box-shadow: 0 6px 32px rgba(44,62,80,0.07);
+            max-width: 900px;
+            margin: 32px auto 0 auto;
+        }
+        .profile-img {
+            width: 340px;
+            height: 340px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 3px solid #e5e7eb;
+            box-shadow: 0 2px 12px rgba(0,0,0,0.06);
+        }
+        @media (max-width: 800px) {
+            .profile-img { width: 200px; height: 200px; }
+            .profile-header, main { max-width: 98vw; }
+            .profile-header { flex-direction: column; gap: 18px; padding: 36px 8px 18px 8px; }
+            .profile-info { max-width: 98vw; text-align: center; }
+            .section { margin: 18px 0; padding: 20px 8px 12px 8px; }
+            .nav-container { padding: 0.7rem 0.7rem; }
+        }
+        .profile-info {
+            max-width: 500px;
+        }
+        .profile-info h1 {
+            margin: 0 0 8px 0;
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: #23272f;
+        }
+        .profile-info h2 {
+            margin: 0 0 16px 0;
+            font-size: 1.3rem;
+            font-weight: 500;
+            color: #2563eb;
+        }
+        .profile-info p {
+            margin: 0 0 18px 0;
+            font-size: 1.1rem;
+            color: #4a4e57;
+        }
+        main {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 0 0 40px 0;
+        }
+        .tiles-grid {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 36px auto 0 auto;
+        }
+        .tiles-two-cols {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 32px;
+            max-width: 900px;
+            margin: 36px auto 0 auto;
+        }
+        @media (max-width: 900px) {
+            .tiles-grid { grid-template-columns: 1fr; grid-template-rows: none; gap: 18px; }
+            .tile-section { min-height: unset; padding: 20px 8px 12px 8px; }
+            .tiles-two-cols { grid-template-columns: 1fr; gap: 18px; }
+        }
+        .tile-section {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 16px rgba(44,62,80,0.06);
+            padding: 32px 32px 24px 32px;
+            min-height: 260px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            margin-bottom: 36px;
+            border: 1.5px solid #e5e7eb;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .tile-section:hover, .section:hover {
+            box-shadow: 0 6px 32px rgba(44,62,80,0.13);
+            transform: translateY(-2px) scale(1.01);
+        }
+        .section {
+            background: #fff;
+            border-radius: 14px;
+            box-shadow: 0 2px 16px rgba(44,62,80,0.06);
+            margin: 36px 0;
+            padding: 32px 32px 24px 32px;
+            border: 1.5px solid #e5e7eb;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .section-title {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 18px;
+            border-left: 4px solid #2563eb;
+            padding-left: 12px;
+            letter-spacing: 0.5px;
+            background: linear-gradient(90deg, #eaf3ff 0%, #f7faff 100%);
+            border-radius: 6px;
+            padding-top: 6px;
+            padding-bottom: 6px;
+        }
+        ul {
+            padding-left: 22px;
+            margin-top: 0;
+        }
+        li {
+            margin-bottom: 10px;
+            font-size: 1.05rem;
+            color: #23272f;
+        }
+        .contact-links a {
+            display: inline-block;
+            margin-right: 22px;
+            color: #fff;
+            background: #2563eb;
+            border-radius: 6px;
+            padding: 8px 18px;
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 1.05rem;
+            transition: background 0.2s, color 0.2s, box-shadow 0.2s;
+            box-shadow: 0 2px 8px rgba(44,62,80,0.07);
+        }
+        .contact-links a:hover {
+            background: #1d4ed8;
+            color: #fff;
+            text-decoration: none;
+            box-shadow: 0 4px 16px rgba(44,62,80,0.13);
+        }
+        .footer {
+            text-align: center;
+            color: #6b7280;
+            font-size: 0.98rem;
+            margin: 32px 0 16px 0;
+            border-top: 1.5px solid #e5e7eb;
+            padding-top: 18px;
+            background: linear-gradient(90deg, #f7faff 0%, #eaf3ff 100%);
+        }
+        .tile-section#skills {
+            margin-top: 36px;
+        }
+        @media (max-width: 900px) {
+            .tile-section#skills { margin-top: 18px; }
+        }
+        .impact-cards {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 24px;
+        }
+        @media (max-width: 900px) {
+            .impact-cards {
+                grid-template-columns: 1fr;
+            }
+        }
+        .impact-card {
+            background: linear-gradient(135deg, #eaf3ff 0%, #f7faff 100%);
+            border-radius: 14px;
+            box-shadow: 0 2px 16px rgba(44,62,80,0.08);
+            padding: 24px;
+            border: 1.5px solid #dbeafe;
+            transition: box-shadow 0.2s, transform 0.2s;
+        }
+        .impact-card:hover {
+            box-shadow: 0 6px 32px rgba(44,62,80,0.13);
+            transform: translateY(-2px) scale(1.015);
+        }
+        .impact-card-title {
+            text-align: center;
+            font-size: 1.25rem;
+            font-weight: 700;
+            color: #2563eb;
+            margin-bottom: 16px;
+            letter-spacing: 0.5px;
+            border-bottom: 2px solid #dbeafe;
+            padding-bottom: 6px;
+            background: linear-gradient(90deg, #eaf3ff 0%, #f7faff 100%);
+            border-radius: 6px;
+        }
+        .tile-section:not(:last-child), .section:not(:last-child) {
+            box-shadow: 0 2px 16px rgba(44,62,80,0.06), 0 1px 0 #e5e7eb;
+        }
+        .section-title::before {
+            content: '\1F4C8'; /* chart increasing icon */
+            margin-right: 10px;
+            font-size: 1.1em;
+            vertical-align: middle;
+            color: #2563eb;
+        }
+        #skills .section-title::before { content: '\1F4BB'; } /* laptop */
+        #initiatives .section-title::before { content: '\1F680'; } /* rocket */
+        #outside-work .section-title::before { content: '\1F3C0'; } /* basketball */
+        #contact .section-title::before { content: '\2709'; } /* envelope */
+        @media (max-width: 800px) {
+            .tile-section, .section {
+                padding: 20px 8px 12px 8px;
+            }
+            .section-title {
+                font-size: 1.1rem;
+                padding-top: 4px;
+                padding-bottom: 4px;
+            }
+            .impact-card-title {
+                font-size: 1.1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+        <nav class="main-nav">
+            <div class="nav-container">
+                <span class="nav-name">Saumya Rastogi</span>
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#skills">Skills</a>
+                    <a href="#impact">Impact</a>
+                    <a href="#initiatives">Initiatives</a>
+                    <a href="#contact">Contact</a>
+                </div>
+            </div>
+        </nav>
+        <header class="profile-header" id="about">
+            <img src="profilePic.jpeg" alt="Saumya Rastogi" class="profile-img">
+            <div class="profile-info">
+                <h1>Saumya Rastogi</h1>
+                <h2>Data Scientist | AI & Analytics Professional</h2>
+                <p>Hi there!!.. I am Saumya Rastogi, Data Scientist with over 9 years of experience in financial services industry. I am passionate about leveraging AI, machine learning, and Generative AI to deliver impactful, data-driven solutions. My expertise lies in owning the end-to-end technical delivery of projects, ensuring they are scalable and aligned with organizational objectives.</p>
+                <p>I have a proven track record of leading cross-functional analytics teams to optimize key areas such as product pricing, claims management, and demand modeling, driving significant business value. I thrive on coaching and mentoring junior talent, fostering a culture of growth and innovation within my teams. With a Master's degree in Economics specializing in advanced econometrics, I bring a strong quantitative foundation to all my work, enabling me to develop robust hypotheses and deliver solutions that are both technically sound and strategically valuable.</p>
+              </div>
+        </header>
+        <main>
+            <section class="tile-section" id="skills">
+                <h3 class="section-title">Skills & Expertise</h3>
+                <ul>
+                    <li>Programming: Python, R, SQL, SAS,</li>
+                    <li>Platforms: AWS, Azure, Databricks, Snowflake, MongoDB, Posit</li>
+                    <li>Data Science: Machine Learning, Neural Nets, Generative AI</li>
+                    <li>Statistical Modeling, Inferential Statistics & Predictive Analytics</li>
+                    <li>Data Engineering & Visualization</li>
+                    <li>Mentoring & Team Leadership</li>
+                    <li>Cloud & Scalable Solutions</li>
+                </ul>
+            </section>
+            <section class="tile-section" id="impact">
+                <h3 class="section-title">Impact</h3>
+                <div class="impact-cards">
+                    <div class="impact-card">
+                        <div class="impact-card-title">Product Strategy and Risk Analytics</div>
+                        <strong>Optimized Product Pricing</strong><br> 
+                        I led an 8-member team to design and implement a cutting-edge pricing algorithm for a $2B disability product. By leveraging predictive models (XGBoost & GLMs) and competitor data, we improved risk rating and selection, which reduced underwriting cycles and enhanced market competitiveness, ultimately leading to wider and easier product adoption.<br><br>
+                        <strong>Reduced Future Liabilities</strong><br>
+                        I led a team of three data scientists in developing data-driven risk models (Poisson GLM). These models, which predict claim occurrence and termination, enabled us to estimate a reduction of approximately $600 million in future liabilities for a sensitive portfolio valued at over $15 billion. My work included identifying emerging risk patterns through SHAP analysis.
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-card-title">Operational Analytics</div>
+                        <strong>Boosted Quote Efficiency</strong><br>
+                        I developed a data-driven risk-rating model (GBM, GLM) that boosted quote efficiency by 300% for long-term disability insurance. This solution was scaled across four additional product lines, demonstrating a significant improvement in operational efficiency.<br><br>
+                        <strong>Streamlined Claims Processing</strong><br>
+                        I developed a survival model to predict claim duration, which enabled the strategic prioritization of open claims for handling and approval. This solution significantly reduced manual effort and streamlined the claims examination process.<br><br>
+                        <strong>Fraud Detection</strong><br>
+                        I engineered an anomaly detection framework (using isolation forest, CADE) to identify fraudulent financial transactions, enabling more efficient compliance communication.
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-card-title">Agentic AI</div>
+                        <strong>RAG Application</strong><br>
+                        I pioneered the development of two innovative Gen AI applications to improve business efficiency. I built a RAG-powered internal wiki for legal documents (using FAISS & Chroma DB), which streamlined the querying and summarization process.<br><br>
+                        <strong>Real-time Business Insights</strong><br>
+                        I created an Agentic AI-powered financial analyst using a multi-agent framework to deliver real-time business insights.
+                    </div>
+                </div>
+            </section>
+            <section class="tile-section" id="initiatives">
+                <h3 class="section-title">Leadership and Team Enablement Initiatives</h3>
+                <div class="impact-cards">
+                    <div class="impact-card">
+                        <div class="impact-card-title">Driving Platform Adoption and Excellence</div>
+                        I lead key initiatives focused on team enablement and technical excellence. This includes spearheading the onboarding, training, and troubleshooting for new platforms, as well as running a community of practice to ensure uniform tool adoption and adherence to best practices. This ensures a high level of operational efficiency and consistency across the team.
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-card-title">Coaching and Development</div>
+                        I actively mentor and coach junior team members to foster their growth and effectiveness. This involves helping them break down complex problem statements, structure project plans, and providing them with opportunities to showcase their work, which has been instrumental in building team capability and morale.
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-card-title">Research & Development (R&D) Initiatives</div>
+                        These are forward-looking projects focused on exploring new technologies, methodologies, or data sources. An R&D initiative might involve prototyping a new predictive modeling technique, evaluating the business potential of a new external dataset, or exploring pain points which need to be modernized.
+                    </div>
+                    <div class="impact-card">
+                        <div class="impact-card-title">Data Governance & Quality Initiatives</div>
+                        This would focus on ensuring the integrity, reliability, and security of data used for modeling and analysis. Examples could include creating a data catalog, establishing data lineage, or implementing automated data quality checks.
+                    </div>
+                </div>
+            </section>
+            <section class="section" id="outside-work">
+                <h3 class="section-title">Outside of Work</h3>
+                <p>Beyond data science, I am passionate about sports and actively participate in local softball and wallyball leagues. I also love gardening and enjoy studying horticulture, finding joy in nurturing plants and learning about the science behind their growth.</p>
+            </section>
+            <section class="section" id="contact">
+                <h3 class="section-title">Get In Touch</h3>
+                <p>Let's connect! Reach out for collaboration, opportunities, or just to chat about data science and AI.</p>
+                <div class="contact-links">
+                    <a href="mailto:your.email@example.com">Email</a>
+                    <a href="https://www.linkedin.com/in/your-linkedin" target="_blank">LinkedIn</a>
+                    <!-- Add more contact links as needed -->
+                </div>
+            </section>
+        </main>
+        <footer class="footer">
+            <span>© 2025 Saumya Rastogi. All rights reserved.</span>
+        </footer>
+    </body>
+</html>
