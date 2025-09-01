@@ -47,22 +47,6 @@
             z-index: 0;
         }
 
-        @media (max-width: 900px) {
-            body::after {
-                background-size: 45vw, 45vw, 32vw;
-                background-position: left 2vw top 2vw, right 2vw bottom 2vw, left 2vw bottom 2vw;
-            }
-        }
-
-        .main-nav {
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(20px);
-            border-bottom: 1px solid var(--border-subtle);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-        }
-
         /* Dark mode styles */
         body.dark-mode {
             --primary-dark: #f7f7fa;
@@ -86,7 +70,7 @@
         body.dark-mode .impact-card,
         body.dark-mode .skill-category {
             background: var(--surface);
-            color: var(--text-primary);
+            color: var (--text-primary);
             border: 1px solid var(--border-subtle);
         }
         body.dark-mode .footer {
@@ -107,6 +91,15 @@
             color: var(--accent-gold);
         }
 
+        .main-nav {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(20px);
+            border-bottom: 1px solid var(--border-subtle);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
         .nav-container {
             max-width: 1000px;
             margin: 0 auto;
@@ -122,6 +115,11 @@
             font-weight: 500;
             color: var(--primary-dark);
             letter-spacing: -0.025em;
+        }
+
+        .nav-links {
+            display: flex;
+            align-items: center;
         }
 
         .nav-links a {
@@ -153,6 +151,23 @@
             width: 100%;
         }
 
+        #darkModeToggle {
+            margin-left: 2rem;
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            border: none;
+            background: var(--accent-gold);
+            color: var(--primary-dark);
+            font-weight: 600;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+
+        #darkModeToggle:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-soft);
+        }
+
         .profile-header {
             display: flex;
             align-items: center;
@@ -165,6 +180,8 @@
             max-width: 1000px;
             margin: 2rem auto 0;
             border-top: 3px solid var(--accent-gold);
+            position: relative;
+            z-index: 2;
         }
 
         .profile-img {
@@ -187,6 +204,7 @@
             .profile-info { text-align: center; }
             .nav-container { padding: 1rem; }
             .nav-links a { margin-left: 1rem; }
+            #darkModeToggle { margin-left: 1rem; }
         }
 
         .profile-info h1 {
@@ -218,6 +236,8 @@
             max-width: 1300px;
             margin: 0 auto;
             padding: 0 0 3rem;
+            position: relative;
+            z-index: 2;
         }
 
         .section {
@@ -375,6 +395,18 @@
             line-height: 1.6;
         }
 
+        .impact-card ul {
+            list-style: disc inside;
+            padding: 0;
+            margin: 0;
+        }
+        .impact-card ul li {
+            color: var(--text-secondary);
+            margin-bottom: 1.1em;
+            position: relative;
+            padding-left: 0;
+        }
+
         .contact-links {
             display: flex;
             gap: 1rem;
@@ -409,7 +441,10 @@
             padding: 2rem;
             border-top: 1px solid var(--border-subtle);
             background: var(--surface-elevated);
+            position: relative;
+            z-index: 2;
         }
+
         /* Highlighted text style */
         .highlight {
             background: var(--accent-gold-light);
@@ -417,6 +452,19 @@
             padding: 0.1em 0.3em;
             border-radius: 4px;
             font-weight: 600;
+        }
+
+        /* Stats highlight for metrics */
+        .stats-highlight {
+            display: inline-block;
+            background: linear-gradient(135deg, var(--accent-gold) 0%, #f7d794 100%);
+            color: var(--primary-dark);
+            padding: 0.2em 0.6em;
+            border-radius: 6px;
+            font-weight: 600;
+            font-size: 0.9em;
+            margin: 0 0.2em;
+            box-shadow: 0 2px 4px rgba(0,0,0,0.1);
         }
 
         @media (max-width: 768px) {
@@ -442,6 +490,123 @@
                 grid-template-columns: 1fr; 
             }
         }
+
+        .impact-cards-wide {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 2rem;
+        }
+        @media (max-width: 900px) {
+            .impact-cards-wide {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        .sub-cards {
+            display: flex;
+            gap: 1.5rem;
+            margin-top: 1rem;
+            flex-wrap: wrap;
+        }
+        .sub-card {
+            background: var(--surface-elevated);
+            border-radius: 10px;
+            box-shadow: var(--shadow-soft);
+            border: 1px solid var(--border-subtle);
+            padding: 1.25rem 1rem;
+            flex: 1 1 320px;
+            min-width: 260px;
+            max-width: 420px;
+        }
+        .sub-card h5 {
+            margin-top: 0;
+            margin-bottom: 0.5rem;
+            font-size: 1.05rem;
+            color: var(--primary-medium);
+            text-align: center;
+        }
+        .sub-card p {
+            margin: 0;
+            color: var(--text-secondary);
+            font-size: 0.98rem;
+        }
+
+        /* Timeline styles */
+        .timeline {
+            position: relative;
+            margin: 1.5rem 0 1rem 0.5rem;
+            padding-left: 2rem;
+            border-left: 3px solid var(--accent-gold);
+        }
+        .timeline-event {
+            position: relative;
+            margin-bottom: 0.9rem;
+            min-height: 2rem;
+            padding-right: 8.5em;
+        }
+        .timeline-dot {
+            position: absolute;
+            left: -2.6rem;
+            top: 0.1rem;
+            width: 1rem;
+            height: 1rem;
+            background: var(--accent-gold);
+            border-radius: 50%;
+            border: 3px solid var(--surface);
+            box-shadow: 0 2px 6px rgba(0,0,0,0.08);
+            z-index: 2;
+        }
+        .timeline-title {
+            font-weight: 600;
+            color: var(--primary-dark);
+            font-size: 1.05rem;
+            margin-bottom: 0.2rem;
+        }
+        .timeline-role {
+            color: var(--primary-medium);
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 0.1rem;
+        }
+        .timeline-date {
+            color: var(--text-light);
+            font-size: 0.9rem;
+            margin-bottom: 0;
+        }
+        .timeline-meta {
+            position: absolute;
+            right: 1.5em;
+            top: 0;
+            text-align: right;
+            color: var(--text-secondary);
+            font-size: 0.9rem;
+            min-width: 7em;
+            white-space: nowrap;
+            pointer-events: none;
+        }
+        .timeline-meta .duration {
+            font-weight: 600;
+            color: var(--primary-medium);
+        }
+        @media (max-width: 700px) {
+            .timeline { padding-left: 1.5rem; }
+            .timeline-dot { left: -0.8rem; }
+            .timeline-event {
+                padding-right: 0;
+                min-height: unset;
+                margin-bottom: 1rem;
+            }
+            .timeline-meta {
+                position: static;
+                display: block;
+                text-align: left;
+                margin-top: 0.2em;
+                margin-bottom: 0.5em;
+                right: unset;
+                min-width: unset;
+                white-space: normal;
+            }
+        }
     </style>
 </head>
 <body>
@@ -450,12 +615,14 @@
             <span class="nav-name">Saumya Rastogi</span>
             <div class="nav-links">
                 <a href="#about">About</a>
+                <a href="#education-work">Education & Work</a>
                 <a href="#skills">Skills</a>
-                <a href="#impact">Impact</a>
-                <a href="#initiatives">Initiatives</a>
+                <a href="#value-proposition">Professional Strengths</a>
+                <a href="#impact">Notable Projects</a>
+                <a href="#outside-work">Outside of Work</a>
                 <a href="#contact">Contact</a>
+                <button id="darkModeToggle">🌙 Dark Mode</button>
             </div>
-            <button id="darkModeToggle" style="margin-left:2rem;padding:0.5rem 1rem;border-radius:6px;border:none;background:var(--accent-gold);color:var(--primary-dark);font-weight:600;cursor:pointer;transition:all 0.3s;">🌙 Dark Mode</button>
         </div>
     </nav>
 
@@ -464,21 +631,66 @@
         <div class="profile-info">
             <h1>Saumya Rastogi</h1>
             <h2>Data Scientist | AI & Analytics Professional</h2>
-            <p>Hi there!!.. I am Saumya Rastogi, a Data Science team lead with <span class="highlight">over 9 years of experience</span> creating measurable business value. I leverage AI and machine learning to redefine multiple functions, including designing sophisticated <span class="highlight">financial risk models</span>, improving efficiency through <span class="highlight">operations analytics</span>, and developing innovative <span class='highlight'>Generative AI</span> solutions. I am passionate about owning the full project lifecycle, from concept to delivery, to ensure technical solutions drive significant organizational growth.</p>
+            <p>Hi there! I am Saumya Rastogi, a Data Science team lead with <span class="highlight">over 9 years of experience</span> creating measurable business value. I leverage AI and machine learning to redefine multiple functions, including designing sophisticated <span class="highlight">financial risk models</span>, improving efficiency through <span class="highlight">operations analytics</span>, and developing innovative <span class='highlight'>Generative AI</span> solutions. I am passionate about owning the full project lifecycle, from concept to delivery, to ensure technical solutions drive significant organizational growth.</p>
             <p>I have a proven track record of leading <span class="highlight">cross-functional analytics teams</span> and high-impact data science initiatives, applying advanced AI and machine learning to transform core business functions. I thrive on <span class="highlight">coaching and mentoring</span> junior talent, fostering a culture of <span class="highlight">growth and innovation</span> within my teams. With a <span class="highlight">Master's degree in Economics</span> specializing in advanced econometrics, I bring a strong quantitative foundation to all my work, enabling me to develop robust hypotheses and deliver solutions that are both technically sound and strategically valuable.</p>
         </div>
     </header>
 
     <main>
+
+        <section class="section" id="education-work">
+            <h3 class="section-title">Background</h3>
+            <div class="impact-cards impact-cards-wide">
+                <div class="impact-card">
+                    <div class="impact-card-title">Education</div>
+                    <ul>
+                        <li><span class="highlight"> Masters in Economics with Advanced Econometrics</span>, Jawaharlal Nehru University, Delhi, India (2016)</li>
+                        <li><span class="highlight">Bachelors in Economics</span>, University of Delhi, New Delhi, India (2013)</li>
+                        <li>Certification in Ethical & Responsible use of AI-ML, Society of Actuaries, USA (2022)</li>
+                        <li>The Complete Course in Agentic AI (Udemy, 2025)</li>
+                    </ul>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-card-title">Work Experience</div>
+                    <div class="timeline">
+                        <div class="timeline-event">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-title"><span class="highlight">Principal Data Scientist</span></div>
+                            <div class="timeline-role">Unum Group</div>
+                            <div class="timeline-meta">July 2022 – Present</div>
+                        </div>
+                        <div class="timeline-event">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-title"><span class="highlight">Senior Data Scientist</span></div>
+                            <div class="timeline-role">Unum Group</div>
+                            <div class="timeline-meta">July 2021 – July 2022</div>
+                        </div>
+                        <div class="timeline-event">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-title"><span class="highlight">Consultant</span></div>
+                            <div class="timeline-role">Deloitte Consulting</div>
+                            <div class="timeline-meta">Jan 2021 – June 2021</div>
+                        </div>
+                        <div class="timeline-event">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-title"><span class="highlight">Senior Consultant</span></div>
+                            <div class="timeline-role">EXL Services</div>
+                            <div class="timeline-meta">2016 – 2020</div>
+                        </div>
+                    </div>
+                </div>
+            </div> 
+        </section>
+
         <section class="section" id="skills">
             <h3 class="section-title">Skills & Expertise</h3>
-            <div class="impact-cards">
+            <div class="impact-cards impact-cards-wide">
                 <div class="impact-card">
                     <div class="impact-card-title">AI/ML & Statistical Modeling</div>
                     <ul>
                         <li><span class="highlight">Agentic AI</span>, RAG, Vector databases, Context Engineering</li>
                         <li>Neural Nets, XGBoost, RF, SVMs, KNN, Elastic Net Regularization, GridSearch, CADE, Reinforcement Learning</li>
-                        <li>Generalized Linear Models (GLM), Time Series Forecasting,<span class="highlight">A/B Testing,</span> Hypotheses Testing, Clustering</li>
+                        <li>Generalized Linear Models (GLM), Time Series Forecasting, <span class="highlight">A/B Testing</span>, Hypotheses Testing, Clustering</li>
                     </ul>
                 </div>
                 <div class="impact-card">
@@ -487,75 +699,100 @@
                         <li><span class="highlight">Python</span>, R, SQL, SAS</li>
                         <li>AWS, Azure, Git, Databricks</li>
                         <li>Snowflake, MongoDB, Hadoop, PySpark</li>
-                        <li><span class="highlight">ChromaDB, OpenAI SDK, FAISS, Langchain</span></li>
+                        <li><span class="highlight">Langchain</span>,ChromaDB, OpenAI SDK, FAISS </li>
                         <li>PowerBI, Tableau, Rshiny, Streamlit</li>
                     </ul>
                 </div>
+            </div>
+        </section>
+
+
+
+        <section class="section" id="value-proposition">
+            <h3 class="section-title">Professional Strengths</h3>
+            <div class="impact-cards">
                 <div class="impact-card">
-                    <div class="impact-card-title">Education & Courses</div>
+                    <div class="impact-card-title">Business Impact Driver</div>
                     <ul>
-                        <li>Masters in Economics with Advanced Econometrics, Jawaharlal Nehru University, Delhi, India (2016)</li>
-                        <li>Bachelors in Economics, University of Delhi, New Delhi, India (2013)</li>
-                        <li><span class="highlight">Certification in Ethical & Responsible use of AI-ML</span>, Society of Actuaries, USA (2022)</li>
-                        <li>The Complete Course in Agentic AI (Udemy, 2025)</li>
+                        <li>Achieved <span class="stats-highlight">300%</span> improvement in operational efficiency, scaling solutions across multiple product lines for enterprise-wide impact.</li>
+                        <li>Led pricing optimization for a <span class="stats-highlight">$2B</span> product portfolio, improving competitiveness and adoption.</li>
+                        <li>Delivered <span class="stats-highlight">$30M</span> reduction in capital adequacy through advanced risk modeling and strategic analytics.</li>
                     </ul>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-card-title">AI/ML Innovation Leader</div>
+                    <ul>
+                        <li>Pioneered <span class="highlight">Agentic AI</span> applications for real-time business insights and decision support.</li>
+                        <li>Expert in cutting-edge ML techniques: XGBoost, Neural Networks, GLMs, bridging theory and business value.</li>
+                        <li>Led key initiatives focused on team enablement and technical excellence.</li>
+                    </ul>
+                </div>
+                <div class="impact-card">
+                    <div class="impact-card-title">Team & Technical Leadership</div>
+                    <ul>
+                        <li>Led <span class="stats-highlight"> cross-functional analytics teams </span>, mentoring junior talent and fostering growth.</li>
+                        <li>Drove initiatives to ensure robust data governance, establishing standards for data integrity and reliability</li>
+                        <li>Focused innovation prototyping new technologies and methodologies to maintain competitive edge and foster a culture of technical growth.</li>
+                    </ul>
+                    
                 </div>
             </div>
         </section>
 
         <section class="section" id="impact">
-            <h3 class="section-title">Business Impact</h3>
+            <h3 class="section-title">Notable Projects</h3>
             <div class="impact-cards">
                 <div class="impact-card">
                     <div class="impact-card-title">Product Strategy and Risk Analytics</div>
-                    <h5>Optimized Product Pricing</h5>
-                    <p>I led an 8-member team to design and implement a cutting-edge pricing algorithm for a $2B disability product. By leveraging predictive models (XGBoost & GLMs) and competitor data, we improved risk rating and selection, which reduced underwriting cycles and enhanced market competitiveness, ultimately leading to wider and easier product adoption.</p>
-                    
-                    <h5>Reduced Future Liabilities</h5>
-                    <p>I led a team of three data scientists in developing data-driven risk models (Poisson GLM). These models, which predict claim occurrence and termination, enabled us to estimate a reduction of approximately $600 million in future liabilities for a sensitive portfolio valued at over $15 billion. My work included identifying emerging risk patterns through SHAP analysis.</p>
+                    <div class="sub-cards">
+                        <div class="sub-card">
+                            <h5>Optimized Product Pricing</h5>
+                            <p>I led an <span class="stats-highlight">8-member team</span> to design and implement a cutting-edge pricing algorithm for a <span class="stats-highlight">$2B</span> disability product. By leveraging predictive models (XGBoost & GLMs) and competitor data, we improved risk rating and selection, which reduced underwriting cycles and enhanced market competitiveness, ultimately leading to wider and easier product adoption.</p>
+                        </div>
+                        <div class="sub-card">
+                            <h5>Modeling Economic Risks</h5>
+                            <p>I led a <span class="stats-highlight">4-member team</span> to developed robust hypotheses using time-series analysisof macro-economic data and its impact on Unum's risk, revenue, and growth metrics</p>
+                        </div>
+                        <div class="sub-card">
+                            <h5>Reduced Capital Requirements</h5>
+                            <p>Reduced <span class="stats-highlight">~$30mn </span> in economic capital requirement by developing a quantitative model to assess 1-in-200 stress scenariousing Monte Carlo simulations. Presented key findings on the correlation of systemic stresses to senior stakeholders.</p>
+                        </div>
+                    </div>
                 </div>
-                
                 <div class="impact-card">
                     <div class="impact-card-title">Operational Analytics</div>
-                    <h5>Boosted Quote Efficiency</h5>
-                    <p>I developed a data-driven risk-rating model (GBM, GLM) that boosted quote efficiency by 300% for long-term disability insurance. This solution was scaled across four additional product lines, demonstrating a significant improvement in operational efficiency.</p>
-                    
-                    <h5>Streamlined Claims Processing</h5>
-                    <p>I developed a survival model to predict claim duration, which enabled the strategic prioritization of open claims for handling and approval. This solution significantly reduced manual effort and streamlined the claims examination process.</p>
-                    
-                    <h5>Fraud Detection</h5>
-                    <p>I engineered an anomaly detection framework (using isolation forest, CADE) to identify fraudulent financial transactions, enabling more efficient compliance communication.</p>
+                    <div class="sub-cards">
+                        <div class="sub-card">
+                            <h5>Boosted Quote Efficiency</h5>
+                            <p>I developed a data-driven risk-rating model (GBM, GLM) that boosted quote efficiency by <span class="stats-highlight">300%</span> for long-term disability insurance. This solution was scaled across four additional product lines, demonstrating a significant improvement in operational efficiency.</p>
+                        </div>
+                        <div class="sub-card">
+                            <h5>Gen AI Product A/B testing </h5>
+                            <p>Spearheaded the end-to-end validation and live <span class="highlight">A/B testing </span> of a Gen AI model for automated quote intake in Salesforce. Defining KPIs to benchmark efficiency, and establishing the Human-in-the-Loop (HITL) criteria to influence the final go-live decision.</p>
+                        </div>
+                        <div class="sub-card">
+                            <h5>Fraud Detection</h5>
+                            <p>I engineered an <span class="highlight">anomaly detection framework </span> (using isolation forest, CADE) to identify fraudulent financial transactions, enabling more efficient compliance communication.</p>
+                        </div>
+                    </div>
                 </div>
-                
                 <div class="impact-card">
                     <div class="impact-card-title">Agentic AI</div>
-                    <h5>RAG Application</h5>
-                    <p>I pioneered the development of two innovative Gen AI applications to improve business efficiency. I built a RAG-powered internal wiki for legal documents (using FAISS & Chroma DB), which streamlined the querying and summarization process.</p>
-                    
-                    <h5>Real-time Business Insights</h5>
-                    <p>I created an Agentic AI-powered financial analyst using a multi-agent framework to deliver real-time business insights.</p>
+                    <div class="sub-cards">
+                        <div class="sub-card">
+                            <h5>RAG Application</h5>
+                            <p> Led the development of a <span class="highlight">RAG-powered</span> internal wiki for legal documents (using FAISS & Chroma DB), which streamlined the querying and summarization process.</p>
+                        </div>
+                        <div class="sub-card">
+                            <h5>Real-time Business Insights</h5>
+                            <p>Led the development of an Agentic <span class="highlight">AI-powered financial analyst</span> using a multi-agent framework to deliver real-time business insights and assist field agents in taking smarter decisions.</p>
+                        </div>
+                        <div class="sub-card">
+                            <h5>Hackathon & Discussion Groups</h5>
+                            <p>Led the creation of several AI oriented discussion groups. Conducted Agentic AI hackathons to increase awareness and upskill the team .</p>
+                        </div>
+                    </div>
                 </div>
-            </div>
-        </section>
-
-        <section class="section" id="initiatives">
-            <h3 class="section-title">Leadership and Team Enablement Initiatives</h3>
-            <div class="impact-cards">
-                <div class="impact-card">
-                    <div class="impact-card-title">Driving Platform Adoption and Excellence</div>
-                    <p>I lead key initiatives focused on team enablement and technical excellence. This includes spearheading the onboarding, training, and troubleshooting for new platforms, as well as running a community of practice to ensure uniform tool adoption and adherence to best practices. This ensures a high level of operational efficiency and consistency across the team.</p>
-                </div>
-                
-                <div class="impact-card">
-                    <div class="impact-card-title">Coaching and Development</div>
-                    <p>I actively mentor and coach junior team members to foster their growth and effectiveness. This involves helping them break down complex problem statements, structure project plans, and providing them with opportunities to showcase their work, which has been instrumental in building team capability and morale.</p>
-                </div>
-                
-                <div class="impact-card">
-                    <div class="impact-card-title">Research & Development Initiatives</div>
-                    <p>I drive initiatives to ensure robust data governance, establishing standards for data integrity and reliability. I also spearhead research and development projects, proactively evaluating and prototyping new technologies and methodologies to maintain the team's competitive edge and foster a culture of continuous innovation.</p>
-                </div>
-                
             </div>
         </section>
 
@@ -577,6 +814,7 @@
     <footer class="footer">
         <span>© 2025 Saumya Rastogi. Crafted with precision and passion for data excellence.</span>
     </footer>
+
     <script>
         // Dark mode toggle logic
         const toggleBtn = document.getElementById('darkModeToggle');
