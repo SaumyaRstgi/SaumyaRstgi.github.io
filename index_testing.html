@@ -49,12 +49,12 @@
 
         /* Dark mode styles */
         body.dark-mode {
-            --primary-dark: #e5e7eb;
-            --primary-medium: #b0b3b8;
+            --primary-dark: #f9fbfe;
+            --primary-medium: #cdd0d6;
             --accent-gold: #d59318;
             --accent-gold-light: #44474a;
             --text-primary: #e5e7eb;
-            --text-secondary: #b0b3b8;
+            --text-secondary: #cbd0d7;
             --text-light: #a0aec0;
             --surface: #23272f;
             --surface-elevated: #2d3138;
@@ -266,13 +266,15 @@
             border-bottom: 2px solid var(--accent-gold-light);
             letter-spacing: -0.025em;
             position: relative;
+            text-align: center;
         }
 
         .section-title::after {
             content: '';
             position: absolute;
             bottom: -2px;
-            left: 0;
+            left: 50%;
+            transform: translateX(-50%);
             width: 60px;
             height: 2px;
             background: var(--accent-gold);
@@ -380,6 +382,7 @@
             color: var(--primary-dark);
             margin-bottom: 1.5rem;
             letter-spacing: -0.025em;
+            text-align: center;
         }
 
         .impact-card h5 {
@@ -614,15 +617,13 @@
         <div class="nav-container">
             <span class="nav-name">Saumya Rastogi</span>
             <div class="nav-links">
-                <a href="#about">About</a>
+                <!-- <a href="#about">About</a> -->
                 <a href="#education-work">Background</a>
-                <a href="#skills">Skills</a>
-                <a href="#value-proposition">Professional Strengths</a>
+                <a href="#skills">Core Competencies</a>
                 <a href="#impact">Notable Projects</a>
                 <a href="#outside-work">Beyond Work</a>
-                <!-- <a href="#contact">Contact</a> -->
                 <button id="linkedinBtn" onclick="window.open('https://www.linkedin.com/in/saumya-rastogi-55601479', '_blank')" style="margin-left:1rem;padding:0.5rem 1rem;border-radius:6px;border:none;background:#0077b5;color:#fff;font-weight:600;cursor:pointer;transition:all 0.3s;">LinkedIn</button>
-                <button id="darkModeToggle">🌙 Dark Mode</button>
+                <button id="darkModeToggle">🌙</button>
 
             </div>
         </div>
@@ -634,7 +635,7 @@
             <h1>Saumya Rastogi</h1>
             <h2>Data Scientist | AI & Analytics Professional</h2>
             <p>Hi there! I am Saumya Rastogi, a Data Science manager with <span class="highlight">over 9 years of experience</span> in leading high-impact data science initiatives, applying advanced AI and machine learning to transform core business functions. My work spans from designing <span class="highlight">operational and financial risk models</span> to pioneering applications of <span class="highlight">Agentic AI</span>. My expertise lies in owning the end-to-end technical deliveryof projects, ensuring they are scalable and aligned with organizational objectives.</p>
-            <p>I have a proven track record of leading <span class="highlight">cross-functional analytics teams</span> and high-impact data science initiatives, applying advanced AI and machine learning to transform core business functions. I thrive on <span class="highlight">coaching and mentoring</span> junior talent, fostering a culture of growth and innovation within my teams. With a <span class="highlight">Master's degree in Economics</span> specializing in advanced econometrics, I bring a strong quantitative foundation to all my work.</p>
+            <p>I lead a <span class="highlight">cross-functional</span> analytics teams with <span class="highlight">5+</span> yrs of management experience. I thrive on <span class="highlight">coaching and mentoring</span> junior talent, fostering a culture of growth and innovation. With a <span class="highlight">Master's degree in Economics</span> specializing in advanced econometrics, I bring a strong quantitative foundation to all my work.</p>
         </div>
     </header>
 
@@ -643,14 +644,29 @@
         <section class="section" id="education-work">
             <h3 class="section-title">Background</h3>
             <div class="impact-cards impact-cards-wide">
+                
                 <div class="impact-card">
                     <div class="impact-card-title">Education</div>
-                    <ul>
-                        <li><span class="highlight"> Masters in Economics with Advanced Econometrics</span>, Jawaharlal Nehru University, Delhi, India (2016)</li>
-                        <li><span class="highlight">Bachelors in Economics</span>, University of Delhi, New Delhi, India (2013)</li>
-                        <li>Certification in Ethical & Responsible use of AI-ML, Society of Actuaries, USA (2022)</li>
-                        <li>The Complete Course in Agentic AI (Udemy, 2025)</li>
-                    </ul>
+                    <div class="timeline">
+                        <div class="timeline-event">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-title"><span class="highlight">Ethical & Responsible use of AI/ML</span></div>
+                            <div class="timeline-role">Society of Actuaries, USA</div>
+                            <div class="timeline-meta">Sept 2022 – Present</div>
+                        </div>
+                        <div class="timeline-event">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-title"><span class="highlight">Masters in Economics</span></div>
+                            <div class="timeline-role">Jawaharlal Nehru University, Delhi, India</div>
+                            <div class="timeline-meta">June 2014 – June 2016</div>
+                        </div>
+                        <div class="timeline-event">
+                            <div class="timeline-dot"></div>
+                            <div class="timeline-title"><span class="highlight">Bachelors in Economics</span></div>
+                            <div class="timeline-role">University of Delhi, New Delhi, India</div>
+                            <div class="timeline-meta">July 2010 – July 2013</div>
+                        </div>
+                    </div>
                 </div>
                 <div class="impact-card">
                     <div class="impact-card-title">Work Experience</div>
@@ -685,60 +701,31 @@
         </section>
 
         <section class="section" id="skills">
-            <h3 class="section-title">Skills & Expertise</h3>
+            <h3 class="section-title">Core Competencies</h3>
             <div class="impact-cards impact-cards-wide">
                 <div class="impact-card">
-                    <div class="impact-card-title">AI/ML & Statistical Modeling</div>
+                    <div class="impact-card-title">Technical Expertise</div>
                     <ul>
-                        <li><span class="highlight">Agentic AI</span>, RAG, Vector databases, Context Engineering</li>
-                        <li>Neural Nets, XGBoost, RF, SVMs, KNN, Elastic Net Regularization, GridSearch, CADE, Reinforcement Learning</li>
-                        <li>Generalized Linear Models (GLM), Time Series Forecasting, <span class="highlight">A/B Testing</span>, Hypotheses Testing, Clustering</li>
+                        <li><span class="highlight">LLMs & Agents :</span> Agentic AI, Open AI SDK, Langchain, RAG, Vector DBs, Context Engineering</li>
+                        <li><span class="highlight">AI/ML Methods :</span> Neural Nets, XGBoost, Elastic Net Regularization, Generalized Linear Models (GLM),Time Series Forecasting </li>
+                        <li><span class="highlight">Exploratory Data Analysis :</span> A/B Testing, Hypotheses Testing, Clustering</li>
+                        <li><span class="highlight">Cloud Platforms :</span> AWS, Azure, Git, Databricks, Snowflake, MongoDB, Hadoop, PySpark</li>
+                        <li><span class="highlight">Visualisation :</span> PowerBI, Tableau, Rshiny, Streamlit</li>
                     </ul>
                 </div>
                 <div class="impact-card">
-                    <div class="impact-card-title">Tech Stack</div>
+                    <div class="impact-card-title">Professional Strengths</div>
                     <ul>
-                        <li><span class="highlight">Python</span>, R, SQL, SAS</li>
-                        <li>AWS, Azure, Git, Databricks</li>
-                        <li>Snowflake, MongoDB, Hadoop, PySpark</li>
-                        <li><span class="highlight">Langchain</span>,ChromaDB, OpenAI SDK, FAISS </li>
-                        <li>PowerBI, Tableau, Rshiny, Streamlit</li>
-                    </ul>
-                </div>
-                <div class="impact-card">
-                    <div class="impact-card-title">Team & Technical Leadership</div>
-                    <ul>
-                        <li>Led <span class="highlight"> cross-functional analytics teams </span>, mentoring junior talent and fostering growth.</li>
-                        <li>Drove initiatives to ensure robust <span class="highlight">data governance</span>, establishing standards for data integrity and reliability</li>
-                        <li><span class="highlight">Focused innovation</span> prototyping new technologies and methodologies to maintain competitive edge and foster a culture of technical growth.</li>
+                        <li><span class="highlight"> Stakeholder Management :</span> Maintaing strong communication with business stakeholders and getting their buy-in</li>
+                        <li><span class="highlight"> Caoching & Development :</span> Mentoring junior talent and fostering growth</li>
+                        <li><span class="highlight"> Focused Innovation :</span> Prototyping new technologies and methodologies to maintain competitive edge and promote culture of technical growth.</li>
+                        <li><span class="highlight"> Governance & Standards :</span> Establishing standards for process integrity and reliability</li>
+                        <!-- <li><span class="highlight"> Tools & Tech Stack : </span> Led platform onboarding, setting standards of practice focused on team enablement and driving technical excellence</li> -->
                     </ul>
                 </div>
             </div>
         </section>
 
-
-
-        <section class="section" id="value-proposition">
-            <h3 class="section-title">Professional Strengths</h3>
-            <div class="impact-cards">
-                <div class="impact-card">
-                    <div class="impact-card-title">Business Impact</div>
-                    <ul>
-                        <li>Achieved <span class="highlight">300%</span> improvement in operational efficiency, scaling solutions across multiple product lines for enterprise-wide impact.</li>
-                        <li>Led pricing optimization for a <span class="highlight">$2B</span> product portfolio, improving competitiveness and adoption.</li>
-                        <li>Delivered <span class="highlight">$30M</span> reduction in capital adequacy through advanced risk modeling and strategic analytics.</li>
-                    </ul>
-                </div>
-                <div class="impact-card">
-                    <div class="impact-card-title">AI/ML Initiatives</div>
-                    <ul>
-                        <li>Pioneered <span class="highlight">Agentic AI</span> applications for real-time business insights and decision support.</li>
-                        <li>Expertise in cutting-edge <span class="highlight">AI/ML techniques</span>: XGBoost, Neural Networks, GLMs, bridging theory and business value.</li>
-                        <li>Led key initiatives such as Platform onboarding, setting standards of practice focused on <span class="highlight">team enablement</span> and driving technical excellence.</li>
-                    </ul>
-                </div>
-            </div>
-        </section>
 
         <section class="section" id="impact">
             <h3 class="section-title">Notable Projects</h3>
@@ -749,14 +736,20 @@
                         <div class="sub-card">
                             <h5>Optimized Product Pricing</h5>
                             <p>I led an <span class="highlight">8-member team</span> to design and implement a cutting-edge pricing algorithm for a <span class="highlight">$2B</span> disability product. By leveraging predictive models (XGBoost & GLMs) and competitor data, we improved risk rating and selection, which reduced underwriting cycles and enhanced market competitiveness, ultimately leading to wider and easier product adoption.</p>
+                            <br>
+                            <p><span class="highlight">Impact :</span> Improved risk rating algorithm and competitive product offering </p>
                         </div>
                         <div class="sub-card">
                             <h5>Modeling Economic Risks</h5>
-                            <p>I led a <span class="highlight">4-member team</span> to developed robust hypotheses using time-series analysisof macro-economic data and its impact on Unum's risk, revenue, and growth metrics</p>
+                            <p>I led a <span class="highlight">4-member team</span> to developed robust hypotheses using time-series analysis of macro-economic data and its impact on Unum's risk, revenue, and growth metrics</p>
+                            <br>
+                            <p><span class="highlight">Impact :</span> Simplified complex macro-economic forces that drive top line impact on profitability </p>
                         </div>
                         <div class="sub-card">
                             <h5>Reduced Capital Requirements</h5>
                             <p>Reduced <span class="highlight">~$30mn </span> in economic capital requirement by developing a quantitative model to assess 1-in-200 stress scenariousing Monte Carlo simulations. Presented key findings on the correlation of systemic stresses to senior stakeholders.</p>
+                            <br>
+                            <p><span class="highlight">Impact :</span> Re-allocation of resources to more productive areas by reducing over estimation </p>
                         </div>
                     </div>
                 </div>
@@ -766,14 +759,20 @@
                         <div class="sub-card">
                             <h5>Boosted Quote Efficiency</h5>
                             <p>I developed a data-driven risk-rating model (GBM, GLM) that boosted quote efficiency by <span class="highlight">300%</span> for long-term disability insurance. This solution was scaled across four additional product lines, demonstrating a significant improvement in operational efficiency.</p>
+                            <br>
+                            <p><span class="highlight">Impact :</span> 3x increase operational efficiency & Rep productivity </p>
                         </div>
                         <div class="sub-card">
                             <h5>Gen AI Product A/B testing </h5>
                             <p>Spearheaded the end-to-end validation and live <span class="highlight">A/B testing </span> of a Gen AI model for automated quote intake in Salesforce. Defining KPIs to benchmark efficiency, and establishing the Human-in-the-Loop (HITL) criteria to influence the final go-live decision.</p>
+                            <br>
+                            <p><span class="highlight">Impact :</span> Operational impact of Gen AI applications & targeted model refinement </p>
                         </div>
                         <div class="sub-card">
                             <h5>Fraud Detection</h5>
                             <p>I engineered an <span class="highlight">anomaly detection framework </span> (using isolation forest, CADE) to identify fraudulent financial transactions, enabling more efficient compliance communication.</p>
+                            <br>
+                            <p><span class="highlight">Impact :</span> Identification of process flaws and awareness of fraudulent transactions  </p>
                         </div>
                     </div>
                 </div>
@@ -783,14 +782,20 @@
                         <div class="sub-card">
                             <h5>RAG Application</h5>
                             <p> Led the development of a <span class="highlight">RAG-powered</span> internal wiki for legal documents (using FAISS & Chroma DB), which streamlined the querying and summarization process.</p>
+                            <br>
+                            <p><span class="highlight">Impact :</span> 10x Increase in summarization of legal documents  </p>
                         </div>
                         <div class="sub-card">
                             <h5>Real-time Business Insights</h5>
                             <p>Led the development of an Agentic <span class="highlight">AI-powered financial analyst</span> using a multi-agent framework to deliver real-time business insights and assist field agents in taking smarter decisions.</p>
+                            <br>
+                            <p><span class="highlight">Impact :</span> Speed to insight and on-the-fly root cause analysis </p>
                         </div>
                         <div class="sub-card">
                             <h5>Hackathon & Discussion Groups</h5>
                             <p>Led the creation of several AI oriented discussion groups. Conducted <span class="highlight">Agentic AI hackathons</span> to increase awareness and upskill the team .</p>
+                            <br>
+                            <p><span class="highlight">Impact :</span> developed community of practice and influencing mindsets </p>
                         </div>
                     </div>
                 </div>
@@ -820,7 +825,7 @@
             body.classList.toggle('dark-mode');
             const isDark = body.classList.contains('dark-mode');
             localStorage.setItem('darkMode', isDark);
-            toggleBtn.textContent = isDark ? '☀️ Light Mode' : '🌙 Dark Mode';
+            toggleBtn.textContent = isDark ? '☀️' : '🌙 ';
         });
     </script>
 </body>
