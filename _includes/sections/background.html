@@ -1,0 +1,33 @@
+<section class="section" id="education-work">
+    <h3 class="section-title">Background</h3>
+    <div class="impact-cards impact-cards-wide">
+        
+        <div class="impact-card">
+            <div class="impact-card-title">Education</div>
+            <div class="timeline">
+                {% for item in site.data.education %}
+                <div class="timeline-event">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-title"><span class="highlight">{{ item.degree }}</span></div>
+                    <div class="timeline-role">{{ item.institution }}</div>
+                    <div class="timeline-meta">{{ item.period }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        
+        <div class="impact-card">
+            <div class="impact-card-title">Work Experience</div>
+            <div class="timeline">
+                {% for item in site.data.experience %}
+                <div class="timeline-event">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-title"><span class="highlight">{{ item.title }}</span></div>
+                    <div class="timeline-role">{{ item.company }}</div>
+                    <div class="timeline-meta">{{ item.period }}</div>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div> 
+</section>

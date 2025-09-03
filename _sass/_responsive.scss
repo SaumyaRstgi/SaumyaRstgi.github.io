@@ -1,0 +1,93 @@
+/* Mobile and Tablet Responsive Styles */
+@media (max-width: 1200px) {
+    .impact-cards {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    .impact-cards {
+        grid-template-columns: 1fr;
+    }
+    
+    .impact-cards-wide {
+        grid-template-columns: 1fr;
+    }
+}
+
+@media (max-width: 800px) {
+    .profile-img { 
+        width: 180px; 
+        height: 180px; 
+    }
+    
+    .profile-header { 
+        flex-direction: column; 
+        gap: 1.5rem; 
+        padding: 2rem 1rem 1.5rem;
+        max-width: 95vw;
+    }
+    
+    .profile-info { 
+        text-align: center; 
+    }
+    
+    .nav-container { 
+        padding: 1rem; 
+    }
+    
+    .nav-links a { 
+        margin-left: 1rem; 
+    }
+    
+    #darkModeToggle { 
+        margin-left: 1rem; 
+    }
+}
+
+@media (max-width: 768px) {
+    .section { 
+        margin: 1rem 0.5rem; 
+        padding: 1.5rem; 
+    }
+    
+    .section-title { 
+        font-size: 1.5rem; 
+    }
+    
+    .profile-info h1 { 
+        font-size: 2.5rem; 
+    }
+    
+    .impact-cards { 
+        grid-template-columns: 1fr; 
+        gap: 1.5rem; 
+    }
+}
+
+@media (max-width: 700px) {
+    .timeline { 
+        padding-left: 1.5rem; 
+    }
+    
+    .timeline-dot { 
+        left: -0.8rem; 
+    }
+    
+    .timeline-event {
+        padding-right: 0;
+        min-height: unset;
+        margin-bottom: 1rem;
+    }
+    
+    .timeline-meta {
+        position: static;
+        display: block;
+        text-align: left;
+        margin-top: 0.2em;
+        margin-bottom: 0.5em;
+        right: unset;
+        min-width: unset;
+        white-space: normal;
+    }
+}

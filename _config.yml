@@ -1,0 +1,46 @@
+# Jekyll Configuration
+title: "Saumya Rastogi - Principal Data Scientist"
+description: "Data Scientist | AI & Analytics Professional with 9+ years of experience"
+author: "Saumya Rastogi"
+email: "saumya.rastogi@example.com"
+linkedin: "https://www.linkedin.com/in/saumya-rastogi-55601479"
+
+# Build settings
+markdown: kramdown
+highlighter: rouge
+theme: minima
+
+# Disable SASS
+sass:
+  style: compressed
+  sass_dir: _sass
+  
+# Exclude SASS from processing
+plugins:
+  - jekyll-feed
+  - jekyll-sitemap
+  - jekyll-seo-tag
+
+# Exclude files from build
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - README.md
+  - index_old_v1.html
+  - index_old_v2.html
+  - index_testing.html
+  - "index_testing copy.html"
+  - _sass
+
+# Collections
+collections:
+  projects:
+    output: false
+  experience:
+    output: false
+  education:
+    output: false
+
+# SEO settings
+google_analytics: # Add your GA tracking ID if needed
+lang: en_US

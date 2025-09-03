@@ -1,0 +1,23 @@
+- title: "Technical Expertise"
+  items:
+    - category: "LLMs & Agents"
+      details: "Agentic AI, Open AI SDK, Langchain, RAG, Vector DBs, Context Engineering"
+    - category: "AI/ML Methods"
+      details: "Neural Nets, XGBoost, Elastic Net Regularization, Generalized Linear Models (GLM),Time Series Forecasting"
+    - category: "Statistical Methods"
+      details: "A/B Testing, Hypotheses Testing, Clustering, PCA, Bootstrapping & Resampling"
+    - category: "Cloud Platforms"
+      details: "AWS, Azure, Git, Databricks, Snowflake, MongoDB, Hadoop, PySpark"
+    - category: "Business Intelligence"
+      details: "PowerBI, Tableau, Rshiny, Streamlit"
+
+- title: "Professional Strengths"
+  items:
+    - category: "Team Management"
+      details: "Setting clear goals, fostering collaboration, driving accountability, and ensuring high standards in project delivery from ideation to execution."
+    - category: "Stakeholder Management"
+      details: "Building consensus among teams, translating technical concepts for non-technical audiences, managing expectations and project scope, and driving alignment between business and technical goals"
+    - category: "Focused Innovation"
+      details: "Prototyping new technologies and methodologies to maintain competitive edge and promote culture of technical growth."
+    - category: "Coaching & Development"
+      details: "Mentoring junior talent and fostering growth, providing regular feedback and career guidance, promoting a culture of continuous learning, and encouraging innovation and collaboration across diverse teams"

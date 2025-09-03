@@ -1,0 +1,23 @@
+<section class="section" id="impact">
+    <h3 class="section-title">Notable Projects</h3>
+    <div class="impact-cards">
+        {% for project in site.data.projects %}
+        <div class="impact-card">
+            <div class="impact-card-title">{{ project.title }}</div>
+            <div class="sub-cards">
+                {% for subproject in project.items %}
+                <div class="sub-card">
+                    <h5>{{ subproject.name }}</h5>
+                    <p>{{ subproject.description }}</p>
+                    {% if subproject.additional_info %}
+                    <br>
+                    <p>{{ subproject.additional_info }}</p>
+                    {% endif %}
+                    <p><span class="highlight">Impact :</span> {{ subproject.impact }}</p>
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>

@@ -1,0 +1,17 @@
+---
+layout: default
+---
+
+<header class="profile-header" id="about">
+    <img src="{{ '/assets/images/profilePic.jpeg' | relative_url }}" alt="{{ site.author }}" class="profile-img">
+    <div class="profile-info">
+        <h1>{{ site.author }}</h1>
+        <h2>{{ page.subtitle | default: site.description }}</h2>
+        {{ content }}
+    </div>
+</header>
+
+{% include sections/background.html %}
+{% include sections/skills.html %}
+{% include sections/projects.html %}
+{% include sections/beyond-work.html %}

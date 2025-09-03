@@ -1,0 +1,15 @@
+<section class="section" id="skills">
+    <h3 class="section-title">Core Competencies</h3>
+    <div class="impact-cards impact-cards-wide">
+        {% for category in site.data.skills %}
+        <div class="impact-card">
+            <div class="impact-card-title">{{ category.title }}</div>
+            <ul>
+                {% for skill in category.items %}
+                <li><span class="highlight">{{ skill.category }} :</span> {{ skill.details }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        {% endfor %}
+    </div>
+</section>
