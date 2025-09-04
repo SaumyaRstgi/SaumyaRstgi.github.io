@@ -9,10 +9,7 @@ linkedin: "https://www.linkedin.com/in/saumya-rastogi-55601479"
 markdown: kramdown
 highlighter: rouge
 
-# Disable SASS
-sass:
-  style: compressed
-  sass_dir: _sass
+# Use GitHub Pages default SASS settings
   
 # Exclude SASS from processing
 plugins:
