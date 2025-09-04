@@ -1,0 +1,18 @@
+# Jekyll build output
+_site/
+
+# Ruby dependencies
+Gemfile.lock
+
+# macOS files
+.DS_Store
+
+# IDE files
+.vscode/
+.idea/
+
+# Node modules (if using npm/yarn)
+node_modules/
+
+# Sass cache
+.sass-cache/
