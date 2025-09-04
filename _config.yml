@@ -8,7 +8,6 @@ linkedin: "https://www.linkedin.com/in/saumya-rastogi-55601479"
 # Build settings
 markdown: kramdown
 highlighter: rouge
-theme: minima
 
 # Disable SASS
 sass:
@@ -26,10 +25,8 @@ exclude:
   - Gemfile
   - Gemfile.lock
   - README.md
-  - index_old_v1.html
-  - index_old_v2.html
-  - index_testing.html
-  - "index_testing copy.html"
+  - SETUP_COMPLETE.md
+  - archive/
 
 # Collections
 collections:
