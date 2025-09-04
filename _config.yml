@@ -30,7 +30,6 @@ exclude:
   - index_old_v2.html
   - index_testing.html
   - "index_testing copy.html"
-  - _sass
 
 # Collections
 collections:
