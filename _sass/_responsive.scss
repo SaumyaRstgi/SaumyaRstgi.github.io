@@ -32,6 +32,18 @@
         text-align: center; 
     }
     
+    .profile-name-section {
+        justify-content: center;
+        flex-wrap: wrap;
+        gap: 1rem;
+        align-items: center;
+    }
+    
+    .profile-linkedin-btn {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.85rem;
+    }
+    
     .nav-container { 
         padding: 1rem; 
     }
@@ -77,13 +89,6 @@
     
     .nav-links a:last-of-type {
         border-bottom: none;
-    }
-    
-    .linkedin-btn {
-        margin: 0;
-        padding: 0.75rem 1.5rem;
-        align-self: center;
-        width: fit-content;
     }
     
     #darkModeToggle {

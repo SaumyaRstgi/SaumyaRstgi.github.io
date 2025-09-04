@@ -23,9 +23,44 @@
     border: 4px solid var(--surface);
 }
 
+.profile-name-section {
+    display: flex;
+    align-items: baseline;
+    gap: 1.5rem;
+    margin-bottom: 0.5rem;
+}
+
+.profile-linkedin-btn {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #0077b5;
+    color: white;
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 2px 6px -1px rgba(0, 119, 181, 0.4);
+    flex-shrink: 0;
+    font-weight: 600;
+    font-size: 0.9rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+.profile-linkedin-btn:hover {
+    background: #005885;
+    transform: translateY(-2px);
+    box-shadow: 0 4px 12px -2px rgba(0, 119, 181, 0.5);
+}
+
+.profile-linkedin-btn svg {
+    fill: currentColor;
+}
+
 .profile-info h1 {
     font-family: 'Playfair Display', serif;
-    margin: 0 0 0.5rem 0;
+    margin: 0;
     font-size: 3rem;
     font-weight: 500;
     color: var(--primary-dark);

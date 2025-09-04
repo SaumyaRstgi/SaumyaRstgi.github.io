@@ -105,24 +105,6 @@
     width: 100%;
 }
 
-.linkedin-btn {
-    margin-left: 1rem;
-    padding: 0.5rem 1rem;
-    border-radius: 6px;
-    border: none;
-    background: #0077b5;
-    color: #fff;
-    font-weight: 600;
-    cursor: pointer;
-    transition: all 0.3s;
-}
-
-.linkedin-btn:hover {
-    background: #005885;
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-soft);
-}
-
 #darkModeToggle {
     margin-left: 2rem;
     padding: 0.5rem 1rem;
