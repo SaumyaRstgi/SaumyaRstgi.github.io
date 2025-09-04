@@ -1,6 +1,15 @@
 <nav class="main-nav">
     <div class="nav-container">
         <span class="nav-name">{{ site.author }}</span>
+        
+        <!-- Mobile menu button -->
+        <button class="mobile-menu-btn" aria-label="Toggle menu">
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+            <span class="hamburger-line"></span>
+        </button>
+        
+        <!-- Navigation links -->
         <div class="nav-links">
             <a href="#education-work">Background</a>
             <a href="#skills">Core Competencies</a>
@@ -8,7 +17,7 @@
             <a href="#outside-work">Beyond Work</a>
             {% if site.linkedin %}
             <button id="linkedinBtn" onclick="window.open('{{ site.linkedin }}', '_blank')" 
-                    style="margin-left:1rem;padding:0.5rem 1rem;border-radius:6px;border:none;background:#0077b5;color:#fff;font-weight:600;cursor:pointer;transition:all 0.3s;">
+                    class="linkedin-btn">
                 LinkedIn
             </button>
             {% endif %}

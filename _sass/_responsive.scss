@@ -36,12 +36,80 @@
         padding: 1rem; 
     }
     
-    .nav-links a { 
-        margin-left: 1rem; 
+    /* Show mobile menu button */
+    .mobile-menu-btn {
+        display: flex !important;
     }
     
-    #darkModeToggle { 
-        margin-left: 1rem; 
+    /* Hide navigation links by default on mobile */
+    .nav-links {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        background: rgba(255, 255, 255, 0.98);
+        backdrop-filter: blur(20px);
+        border-bottom: 1px solid var(--border-subtle);
+        flex-direction: column;
+        padding: 1rem;
+        gap: 1rem;
+        transform: translateY(-100%);
+        opacity: 0;
+        visibility: hidden;
+        transition: all 0.3s ease;
+        z-index: 100;
+    }
+    
+    /* Show navigation when active */
+    .nav-links.active {
+        transform: translateY(0);
+        opacity: 1;
+        visibility: visible;
+    }
+    
+    .nav-links a {
+        margin: 0;
+        padding: 0.75rem 0;
+        font-size: 1.1rem;
+        text-align: center;
+        border-bottom: 1px solid var(--border-subtle);
+    }
+    
+    .nav-links a:last-of-type {
+        border-bottom: none;
+    }
+    
+    .linkedin-btn {
+        margin: 0;
+        padding: 0.75rem 1.5rem;
+        align-self: center;
+        width: fit-content;
+    }
+    
+    #darkModeToggle {
+        margin: 0;
+        padding: 0.75rem 1.5rem;
+        align-self: center;
+        width: fit-content;
+    }
+    
+    /* Dark mode support for mobile navigation */
+    body.dark-mode .nav-links {
+        background: rgba(44, 44, 44, 0.98);
+        border-bottom: 1px solid var(--border-subtle);
+    }
+    
+    body.dark-mode .nav-links a {
+        color: var(--text-secondary);
+        border-bottom-color: var(--border-subtle);
+    }
+    
+    body.dark-mode .nav-links a:hover {
+        color: var(--accent-gold);
+    }
+    
+    body.dark-mode .mobile-menu-btn .hamburger-line {
+        background: var(--text-primary);
     }
 }
 

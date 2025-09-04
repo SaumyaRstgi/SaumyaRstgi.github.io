@@ -16,6 +16,37 @@ document.addEventListener('DOMContentLoaded', function() {
         toggleBtn.textContent = isDark ? '☀️' : '🌙';
     });
 
+    // Mobile menu toggle logic
+    const mobileMenuBtn = document.querySelector('.mobile-menu-btn');
+    const navLinks = document.querySelector('.nav-links');
+    
+    if (mobileMenuBtn && navLinks) {
+        mobileMenuBtn.addEventListener('click', function() {
+            mobileMenuBtn.classList.toggle('active');
+            navLinks.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on nav links
+        const navLinkItems = navLinks.querySelectorAll('a');
+        navLinkItems.forEach(link => {
+            link.addEventListener('click', () => {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            });
+        });
+        
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', function(event) {
+            const isClickInsideNav = navLinks.contains(event.target);
+            const isClickOnMenuBtn = mobileMenuBtn.contains(event.target);
+            
+            if (!isClickInsideNav && !isClickOnMenuBtn && navLinks.classList.contains('active')) {
+                mobileMenuBtn.classList.remove('active');
+                navLinks.classList.remove('active');
+            }
+        });
+    }
+
     // Navigation highlighting based on scroll position
     function updateActiveNavLink() {
         const sections = document.querySelectorAll('section[id], header[id]');
