@@ -26,6 +26,12 @@
     z-index: 101;
 }
 
+.nav-right {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
 /* Mobile menu button */
 .mobile-menu-btn {
     display: none;
@@ -106,7 +112,7 @@
 }
 
 #darkModeToggle {
-    margin-left: 2rem;
+    margin-left: 0;
     padding: 0.5rem 1rem;
     border-radius: 6px;
     border: none;
@@ -115,6 +121,7 @@
     font-weight: 600;
     cursor: pointer;
     transition: all 0.3s;
+    z-index: 101;
 }
 
 #darkModeToggle:hover {

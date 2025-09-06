@@ -48,6 +48,17 @@
         padding: 1rem; 
     }
     
+    /* Ensure nav-right items are properly spaced on mobile */
+    .nav-right {
+        gap: 0.75rem;
+    }
+    
+    /* Dark mode toggle on mobile - make it smaller */
+    #darkModeToggle {
+        padding: 0.5rem 0.75rem;
+        font-size: 0.9rem;
+    }
+    
     /* Show mobile menu button */
     .mobile-menu-btn {
         display: flex !important;
@@ -89,13 +100,6 @@
     
     .nav-links a:last-of-type {
         border-bottom: none;
-    }
-    
-    #darkModeToggle {
-        margin: 0;
-        padding: 0.75rem 1.5rem;
-        align-self: center;
-        width: fit-content;
     }
     
     /* Dark mode support for mobile navigation */

@@ -2,12 +2,17 @@
     <div class="nav-container">
         <span class="nav-name">{{ site.author }}</span>
         
-        <!-- Mobile menu button -->
-        <button class="mobile-menu-btn" aria-label="Toggle menu">
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-            <span class="hamburger-line"></span>
-        </button>
+        <div class="nav-right">
+            <!-- Dark mode toggle - always visible -->
+            <button id="darkModeToggle">🌙</button>
+            
+            <!-- Mobile menu button -->
+            <button class="mobile-menu-btn" aria-label="Toggle menu">
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+                <span class="hamburger-line"></span>
+            </button>
+        </div>
         
         <!-- Navigation links -->
         <div class="nav-links">
@@ -15,7 +20,6 @@
             <a href="#skills">Core Competencies</a>
             <a href="#impact">Notable Projects</a>
             <a href="#outside-work">Beyond Work</a>
-            <button id="darkModeToggle">🌙</button>
         </div>
     </div>
 </nav>
