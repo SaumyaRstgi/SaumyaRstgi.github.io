@@ -9,8 +9,12 @@
     .impact-cards {
         grid-template-columns: 1fr;
     }
-    
+
     .impact-cards-wide {
+        grid-template-columns: 1fr;
+    }
+
+    .impact-cards-full {
         grid-template-columns: 1fr;
     }
 }
@@ -123,40 +127,60 @@
 }
 
 @media (max-width: 768px) {
-    .section { 
-        margin: 1rem 0.5rem; 
-        padding: 1.5rem; 
+    .section {
+        margin: 1rem 0.5rem;
+        padding: 1.5rem;
     }
-    
-    .section-title { 
-        font-size: 1.5rem; 
+
+    .section-title {
+        font-size: 1.5rem;
     }
-    
-    .profile-info h1 { 
-        font-size: 2.5rem; 
+
+    .profile-info h1 {
+        font-size: 2.5rem;
     }
-    
-    .impact-cards { 
-        grid-template-columns: 1fr; 
-        gap: 1.5rem; 
+
+    .impact-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+
+    .impact-card {
+        padding: 1.25rem;
+    }
+
+    .sub-card {
+        padding: 1rem;
+        margin-bottom: 1rem;
+    }
+
+    .sub-card p {
+        font-size: 0.95rem;
+        line-height: 1.5;
+    }
+
+    .sub-card a {
+        word-break: break-all;
+        display: inline-block;
+        margin-top: 0.25rem;
     }
 }
 
 @media (max-width: 700px) {
-    .timeline { 
-        padding-left: 1.5rem; 
+    .timeline {
+        padding-left: 1.5rem;
     }
-    
-    .timeline-dot { 
-        left: -0.8rem; 
+
+    .timeline-dot {
+        left: -0.8rem;
     }
-    
+
     .timeline-event {
         padding-right: 0;
         min-height: unset;
         margin-bottom: 1rem;
     }
-    
+
     .timeline-meta {
         position: static;
         display: block;
@@ -166,5 +190,45 @@
         right: unset;
         min-width: unset;
         white-space: normal;
+    }
+}
+
+@media (max-width: 480px) {
+    .section {
+        margin: 0.75rem 0.25rem;
+        padding: 1rem;
+    }
+
+    .profile-header {
+        padding: 1.5rem 0.75rem 1rem;
+    }
+
+    .profile-info h1 {
+        font-size: 2rem;
+    }
+
+    .profile-info h2 {
+        font-size: 1.1rem;
+    }
+
+    .impact-card {
+        padding: 1rem;
+    }
+
+    .impact-card-title {
+        font-size: 1.1rem;
+    }
+
+    .sub-card {
+        padding: 0.75rem;
+    }
+
+    .sub-card p {
+        font-size: 0.9rem;
+    }
+
+    .highlight {
+        padding: 0.05em 0.2em;
+        font-size: 0.9em;
     }
 }

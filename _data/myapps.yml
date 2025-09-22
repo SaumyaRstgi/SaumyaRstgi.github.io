@@ -1,0 +1,7 @@
+- title: "Weekend Planner"
+  items:
+    - name: "PlanMyWeekend"
+      description: "Tired of the same old weekend plans? Discover exciting activities and events happening around you with the Weekend Planner app. Whether you're looking for outdoor adventures, cultural experiences, or family-friendly fun, the app has got you covered. Plan your perfect weekend today!"
+      link: "https://planmyweekend.vercel.app/"
+      additional_info: "Technologies Used: Google Search API, GPT-4o-mini"
+      impact: "Weekend Planning made easy!"

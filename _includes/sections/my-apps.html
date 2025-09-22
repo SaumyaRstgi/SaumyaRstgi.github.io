@@ -1,0 +1,26 @@
+<section class="section" id="my-apps">
+    <h3 class="section-title">My Apps</h3>
+    <div class="impact-cards-full">
+        {% for app in site.data.myapps %}
+        <div class="impact-card">
+            <div class="impact-card-title">{{ app.title }}</div>
+            <div class="sub-cards">
+                {% for subapp in app.items %}
+                <div class="sub-card">
+                    <!-- <h5>{{ subapp.name }}</h5> -->
+                    <p>{{ subapp.description }}</p>
+                    {% if subapp.link %}
+                    <br>
+                    <p><span class="highlight">Try it Out :</span> <a href="{{ subapp.link }}" target="_blank">{{ subapp.link }}</a></p>
+                    {% endif %}
+                    <p><span class="highlight">Impact :</span> {{ subapp.impact }}</p>
+                    {% if subapp.additional_info %}
+                    <p>{{ subapp.additional_info }}</p>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</section>
