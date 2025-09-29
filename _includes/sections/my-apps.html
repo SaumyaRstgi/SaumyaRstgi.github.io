@@ -8,15 +8,24 @@
                 {% for subapp in app.items %}
                 <div class="sub-card">
                     <!-- <h5>{{ subapp.name }}</h5> -->
-                    <p>{{ subapp.description }}</p>
-                    {% if subapp.link %}
-                    <br>
-                    <p><span class="highlight">Try it Out :</span> <a href="{{ subapp.link }}" target="_blank">{{ subapp.link }}</a></p>
-                    {% endif %}
-                    <p><span class="highlight">Impact :</span> {{ subapp.impact }}</p>
-                    {% if subapp.additional_info %}
-                    <p>{{ subapp.additional_info }}</p>
-                    {% endif %}
+                    <div class="app-content-layout">
+                        {% if subapp.image %}
+                        <div class="app-image-container">
+                            <img src="{{ subapp.image }}" alt="{{ subapp.name }}" class="app-image">
+                        </div>
+                        {% endif %}
+                        <div class="app-text-content">
+                            <p>{{ subapp.description }}</p>
+                            {% if subapp.link %}
+                            <br>
+                            <p><span class="highlight">Try it Out :</span> <a href="{{ subapp.link }}" target="_blank">{{ subapp.link }}</a></p>
+                            {% endif %}
+                            <p><span class="highlight">Impact :</span> {{ subapp.impact }}</p>
+                            {% if subapp.additional_info %}
+                            <p>{{ subapp.additional_info }}</p>
+                            {% endif %}
+                        </div>
+                    </div>
                 </div>
                 {% endfor %}
             </div>

@@ -225,3 +225,32 @@
     margin: 0 0.2em;
     box-shadow: 0 2px 4px rgba(0,0,0,0.1);
 }
+
+/* App Content Layout */
+.app-content-layout {
+    display: flex;
+    gap: 1.5rem;
+    align-items: flex-start;
+}
+
+.app-image-container {
+    flex-shrink: 0;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+}
+
+.app-image {
+    width: 200px;
+    height: auto;
+    border-radius: 8px;
+    transition: transform 0.3s ease;
+}
+
+.app-image:hover {
+    transform: scale(1.02);
+}
+
+.app-text-content {
+    flex: 1;
+}

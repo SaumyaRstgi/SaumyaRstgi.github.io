@@ -164,6 +164,19 @@
         display: inline-block;
         margin-top: 0.25rem;
     }
+
+    .app-content-layout {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .app-image-container {
+        text-align: center;
+    }
+
+    .app-image {
+        width: 200px;
+    }
 }
 
 @media (max-width: 700px) {
@@ -230,5 +243,18 @@
     .highlight {
         padding: 0.05em 0.2em;
         font-size: 0.9em;
+    }
+
+    .app-content-layout {
+        flex-direction: column;
+        gap: 1rem;
+    }
+
+    .app-image-container {
+        text-align: center;
+    }
+
+    .app-image {
+        width: 180px;
     }
 }
