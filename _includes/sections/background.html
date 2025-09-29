@@ -1,6 +1,6 @@
 <section class="section" id="education-work">
     <h3 class="section-title">Background</h3>
-    <div class="impact-cards impact-cards-wide">
+    <div class="impact-cards">
         
         <div class="impact-card">
             <div class="impact-card-title">Education</div>
@@ -15,7 +15,24 @@
                 {% endfor %}
             </div>
         </div>
-        
+
+        <div class="impact-card">
+            <div class="impact-card-title">Certifications</div>
+            <div class="timeline">
+                {% for item in site.data.certifications %}
+                <div class="timeline-event">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-title"><span class="highlight">{{ item.name }}</span></div>
+                    <div class="timeline-role">{{ item.issuer }}</div>
+                    <div class="timeline-meta">{{ item.period }}</div>
+                    {% if item.credential_id %}
+                    <div class="timeline-meta">ID: {{ item.credential_id }}</div>
+                    {% endif %}
+                </div>
+                {% endfor %}
+            </div>
+        </div>
+
         <div class="impact-card">
             <div class="impact-card-title">Work Experience</div>
             <div class="timeline">

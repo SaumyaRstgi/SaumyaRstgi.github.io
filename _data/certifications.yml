@@ -1,0 +1,13 @@
+# Add your certifications here
+# Uncomment and modify the example below:
+- name: "AWS Certified Cloud Practitioner"
+  issuer: "Amazon Web Services (AWS)"
+  period: "Sept 2025"
+  # credential_id: "SAA-C03-123456"
+
+# Example format:
+- name: "Ethical & Responsible use of AI/ML"
+  issuer: "Society of Actuaries, USA"
+  period: "Sept 2022"
+  # credential_id: "Optional credential ID"
+
